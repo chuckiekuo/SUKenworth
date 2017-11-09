@@ -131,7 +131,7 @@ namespace SUKenworth.Controllers
                     return View("Lockout");
                 case SignInStatus.Failure:
                 default:
-                    ModelState.AddModelError("", "Invalid code.");
+                    ModelState.AddModelError(String.Empty, "Invalid code.");
                     return View(model);
             }
         }
