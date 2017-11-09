@@ -283,7 +283,7 @@ namespace SUKenworth.Controllers
             ViewBag.StatusMessage =
                 message == ManageMessageId.RemoveLoginSuccess ? "The external login was removed."
                 : message == ManageMessageId.Error ? "An error has occurred."
-                : "";
+                : String.Empty;
             var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
             if (user == null)
             {
