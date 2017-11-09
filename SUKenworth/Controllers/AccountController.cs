@@ -10,7 +10,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using SUKenworth.Models;
 
-// This is a test comment, feel free to remove.
+// This is a test comment, feel free to remove. NO I WON'T DO IT YOU CAN'T MAKE ME
 
 namespace SUKenworth.Controllers
 {
