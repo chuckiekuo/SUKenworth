@@ -349,7 +349,7 @@ namespace SUKenworth.Controllers
         {
             foreach (var error in result.Errors)
             {
-                ModelState.AddModelError("", error);
+                ModelState.AddModelError(String.Empty, error);
             }
         }
 
