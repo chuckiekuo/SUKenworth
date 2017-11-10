@@ -1,4 +1,6 @@
-﻿@using Microsoft.AspNet.Identity
+﻿@using SUKenworth.Controllers;
+@using Microsoft.AspNet.Identity
+@using ExtensionMethods
 @if (Request.IsAuthenticated)
 {
     using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
@@ -9,6 +11,19 @@
         <li>
             @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
         </li>
+
+        @{
+            var isAdmin = User.Identity.GetIsAdminUser();
+
+            if (isAdmin)
+            {
+                <li>
+                    @Html.ActionLink("Admin", "Index", "Admin", routeValues: null, htmlAttributes: new { title = "Manage" })
+                </li>
+            }
+        }
+
+
         <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
     </ul>
     }
