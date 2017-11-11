@@ -1,18 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using Database_Sandbox.Models;
-
-namespace Database_Sandbox.App_Start
+﻿namespace SUKenworth.App_Start
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Web;
+    using SUKenworth.Models;
+    using SUKenworth.Models.TestDataModels;
+    using SUKenworth.Controllers.Backend;
+
     public static class DataConfig
     {
-        public static TestDataBaseEntities db;
+        public static SUKenworth.Models.TestDataModels.TestDatabaseEntities TestDB;
 
         static DataConfig()
         {
-
+            TestDB = new TestDatabaseEntities();
         }
 
         public static void DirectCreate(User user)
@@ -42,7 +44,7 @@ namespace Database_Sandbox.App_Start
 
         public static List<User> GetDataList()
         {
-
+            return TestDB.Users.ToList();
         }
     }
 }
