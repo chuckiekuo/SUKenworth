@@ -19,27 +19,41 @@
 
         public static void DirectCreate(User user)
         {
-
+            TestDB.Users.Add(user);
+            TestDB.SaveChanges();
         }
 
         public static void BulkDirectCreate(IEnumerable<User> inputList)
         {
-
+            foreach (var user in inputList)
+            {
+                User temp = new User()
+                {
+                    Id = user.Id,
+                    Name = user.Name
+                };
+                TestDB.Users.Add(temp);
+            }
+            TestDB.SaveChanges();
         }
 
         public static void DirectDelete(User user)
         {
-
+            TestDB.Users.Remove(user);
         }
 
         public static void DirectUpdate(User user)
         {
-
+            TestDB.Users.Remove(TestDB.Users.Find(user.Id));
+            TestDB.Users.Add(user);
+            TestDB.SaveChanges();
         }
 
         public static void ClearDataBase()
         {
+            TestDB.Users.RemoveRange(TestDB.Users.ToList());
 
+            TestDB.SaveChanges();
         }
 
         public static List<User> GetDataList()
