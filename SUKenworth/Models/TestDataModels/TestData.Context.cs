@@ -13,10 +13,10 @@ namespace SUKenworth.Models.TestDataModels
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class TestDatabaseEntities : DbContext
+    public partial class KenworthProjectsTestEntities : DbContext
     {
-        public TestDatabaseEntities()
-            : base("name=TestDatabaseEntities")
+        public KenworthProjectsTestEntities()
+            : base("name=KenworthProjectsTestEntities")
         {
         }
     
