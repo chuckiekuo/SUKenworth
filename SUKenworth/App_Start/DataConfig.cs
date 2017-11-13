@@ -10,11 +10,11 @@
 
     public static class DataConfig
     {
-        public static SUKenworth.Models.TestDataModels.TestDatabaseEntities TestDB;
+        public static SUKenworth.Models.TestDataModels.KenworthProjectsTestEntities TestDB;
 
         static DataConfig()
         {
-            TestDB = new TestDatabaseEntities();
+            TestDB = new KenworthProjectsTestEntities();
         }
 
         public static void DirectCreate(User user)
@@ -30,7 +30,7 @@
                 User temp = new User()
                 {
                     Id = user.Id,
-                    Name = user.Name
+                    Username = user.Username
                 };
                 TestDB.Users.Add(temp);
             }

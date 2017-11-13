@@ -51,7 +51,7 @@
                         tempUser.Id = y;
                     }
 
-                    tempUser.Name = user.Element("Name").Value;
+                    tempUser.Username = user.Element("Name").Value;
                     tempList.Add(tempUser);
                 }
             }
