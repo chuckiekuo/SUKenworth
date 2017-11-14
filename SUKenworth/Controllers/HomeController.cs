@@ -26,5 +26,12 @@ namespace SUKenworth.Controllers
 
             return View();
         }
+
+        public ActionResult Error(int errorCode)
+        {
+            //look up errorCode in error table
+            //send to view
+            return View();
+        }
     }
 }
