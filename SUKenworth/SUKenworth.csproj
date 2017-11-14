@@ -346,6 +346,14 @@
     <Content Include="Content\bootstrap\badges.less" />
     <Content Include="Content\bootstrap\alerts.less" />
     <Content Include="Bundles.config" />
+    <EntityDeploy Include="Models\TestDataModels\TestData.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>TestData.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\TestDataModels\TestData.edmx.diagram">
+      <DependentUpon>TestData.edmx</DependentUpon>
+    </Content>
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Models\TestDataModels\TestData.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>TestData.edmx</DependentUpon>
@@ -356,14 +364,6 @@
       <DependentUpon>TestData.edmx</DependentUpon>
       <LastGenOutput>TestData.cs</LastGenOutput>
     </Content>
-    <EntityDeploy Include="Models\TestDataModels\TestData.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>TestData.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\TestDataModels\TestData.edmx.diagram">
-      <DependentUpon>TestData.edmx</DependentUpon>
-    </Content>
-    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap-datetimepicker.js" />
     <Content Include="Scripts\bootstrap-datetimepicker.min.js" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
