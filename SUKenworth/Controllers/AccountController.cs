@@ -425,12 +425,12 @@ namespace SUKenworth.Controllers
             base.Dispose(disposing);
         }
 
-        public ApplicationUser GetUser(string Email)
+        public ApplicationUser GetUser(string email)
         {
 
             var task = Task.Run(async () =>
             {
-                return await UserManager.FindByNameAsync(Email);
+                return await UserManager.FindByNameAsync(email);
             });
 
             return task.Result;
