@@ -80,19 +80,27 @@
 
                     new XElement("User",
                         new XElement("Id", 101),
-                        new XElement("Name", "Mark")),
+                        new XElement("Username", "Mark"),
+                        new XElement("Password", "MARTHAAAAAA"),
+                        new XElement("Admin", 0)),
 
                     new XElement("User",
                         new XElement("Id", 102),
-                        new XElement("Name", "Rosy")),
+                        new XElement("Username", "Rosy"),
+                        new XElement("Password", "password2"),
+                        new XElement("Admin", 0)),
 
                     new XElement("User",
                         new XElement("Id", 103),
-                        new XElement("Name", "Pam")),
+                        new XElement("Username", "Pam"),
+                        new XElement("Password", "mynewpassword"),
+                        new XElement("Admin", 0)),
 
                     new XElement("User",
                         new XElement("Id", 104),
-                        new XElement("Name", "John"))));
+                        new XElement("Username", "John"),
+                        new XElement("Password", "abc##123"),
+                        new XElement("Admin", 0))));
             }
 
             // TO-DO: Define other test data sets
