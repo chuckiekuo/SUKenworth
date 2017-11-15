@@ -30,7 +30,9 @@
                 User temp = new User()
                 {
                     Id = user.Id,
-                    Username = user.Username
+                    Username = user.Username,
+                    Password = user.Password,
+                    Admin = user.Admin
                 };
                 TestDB.Users.Add(temp);
             }

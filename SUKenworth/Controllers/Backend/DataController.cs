@@ -51,7 +51,9 @@
                         tempUser.Id = y;
                     }
 
-                    tempUser.Username = user.Element("Name").Value;
+                    tempUser.Username = user.Element("Username").Value;
+                    tempUser.Password = user.Element("Password").Value;
+                    tempUser.Admin = Convert.ToBoolean(user.Element("Admin").Value);
                     tempList.Add(tempUser);
                 }
             }
@@ -82,25 +84,25 @@
                         new XElement("Id", 101),
                         new XElement("Username", "Mark"),
                         new XElement("Password", "MARTHAAAAAA"),
-                        new XElement("Admin", 0)),
+                        new XElement("Admin", false)),
 
                     new XElement("User",
                         new XElement("Id", 102),
                         new XElement("Username", "Rosy"),
                         new XElement("Password", "password2"),
-                        new XElement("Admin", 0)),
+                        new XElement("Admin", false)),
 
                     new XElement("User",
                         new XElement("Id", 103),
                         new XElement("Username", "Pam"),
                         new XElement("Password", "mynewpassword"),
-                        new XElement("Admin", 0)),
+                        new XElement("Admin", false)),
 
                     new XElement("User",
                         new XElement("Id", 104),
                         new XElement("Username", "John"),
                         new XElement("Password", "abc##123"),
-                        new XElement("Admin", 0))));
+                        new XElement("Admin", false))));
             }
 
             // TO-DO: Define other test data sets
