@@ -7,4 +7,5 @@
 @foreach (var item in Model)
 {
     @Html.ActionLink("Admin Privleges for " + item, "AddAdmin", new { id = item })
+    <br />
 }
