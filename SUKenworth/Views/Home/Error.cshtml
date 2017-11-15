@@ -1,0 +1,14 @@
+﻿
+@model SUKenworth.Models.ErrorModel
+
+<body>
+    <h1>
+        Error!
+    </h1>
+    <h2>
+        <!--print error message-->
+        @Model.getError(Model.mErrorCode)
+    </h2>
+</body>
+
+

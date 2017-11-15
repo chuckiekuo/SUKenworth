@@ -23,15 +23,18 @@ namespace SUKenworth.Controllers
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
-
             return View();
         }
 
-        public ActionResult Error(int errorCode)
+        public ActionResult Error(int errorCode = 0)
         {
-            //look up errorCode in error table
-            //send to view
-            return View();
+            
+            var error = new Models.ErrorModel
+            {
+                mErrorCode = errorCode
+            };
+
+            return View("Error", error);
         }
     }
 }

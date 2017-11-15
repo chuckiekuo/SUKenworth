@@ -221,6 +221,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\ErrorModel.cs" />
     <Compile Include="Models\IdentifyExtensions.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -427,6 +428,7 @@
     <Content Include="Views\Shared\_BundleLayout.cshtml" />
     <Content Include="SUKenworth.ruleset" />
     <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Home\Error.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
