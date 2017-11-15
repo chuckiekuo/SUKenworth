@@ -8,10 +8,10 @@ namespace SUKenworth.Models
     public partial class ErrorModel
     {
         public int mErrorCode { get; set; }
-        List<string> errors = new List<string>(new string[] 
+        List<string> errors = new List<string>(new string[]
         {
             "Default error",
-            ""
+            String.Empty
         });
 
         public string getError(int i)
