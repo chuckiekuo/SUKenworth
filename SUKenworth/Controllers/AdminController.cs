@@ -23,6 +23,8 @@ namespace SUKenworth.Controllers
                 _userManager = value;
             }
         }
+
+
         // GET: Admin
         public ActionResult Index(string id = null)
         {
@@ -49,8 +51,8 @@ namespace SUKenworth.Controllers
 
         public ActionResult ListUsers()
         {
-           
-            return View(_userManager.Users.ToList());
+   
+            return View(_userManager.Users);
         }
 
         public string[] getUserInfo(RegisterViewModel registerViewModel)
