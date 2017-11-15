@@ -21,7 +21,7 @@ namespace SUKenworth.Models
             return userIdentity;
         }
 
-        public bool AdminUser;
+        public bool AdminUser = true;
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>

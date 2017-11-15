@@ -1,12 +1,10 @@
 ﻿@using Microsoft.AspNet.Identity
 @using SUKenworth.Models;
-@model UserManager<ApplicationUser>
+@model List<string>
 
 <h2>View</h2>
 
 @foreach (var item in Model)
 {
-    <p>
-        @item.isAdmin
-    </p>
+    @Html.ActionLink("Admin Privleges for " + item, "AddAdmin", new { id = item })
 }

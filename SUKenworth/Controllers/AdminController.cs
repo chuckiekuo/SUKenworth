@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using ExtensionMethods;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.AspNet.Identity;
+using System.Collections.Generic;
 
 namespace SUKenworth.Controllers
 {
@@ -44,15 +45,22 @@ namespace SUKenworth.Controllers
             }
             else
             {
-                return RedirectToAction("Home/Index");
+                return RedirectToAction("Index");
             }
 
         }
 
         public ActionResult ListUsers()
         {
-   
-            return View(_userManager.Users);
+            List<ApplicationUser> myList = UserManager.Users.ToList<ApplicationUser>();
+            List<string> usernames = new List<string>();
+
+            for (int i = 0; i < myList.Count(); i++)
+            {
+                usernames.Add(myList[i].Email);
+            }
+
+            return View(usernames);
         }
 
         public string[] Getuserinfo(RegisterViewModel registerViewModel)
