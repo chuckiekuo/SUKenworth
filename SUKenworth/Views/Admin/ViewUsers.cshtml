@@ -1,0 +1,11 @@
+﻿@using Microsoft.AspNet.Identity
+@model List<ApplicationUser>
+
+<h2>View</h2>
+
+@foreach (var item in Model)
+{
+    <p>
+        @item.isAdmin
+    </p>
+}
