@@ -17,8 +17,10 @@
 
             if (isAdmin)
             {
+                string[] userEmail = User.Identity.Name.Split('.');
+                string urlEmail = userEmail[0] + "0000" + userEmail[1];
                 <li>
-                    @Html.ActionLink("Admin", "Index", "Admin", routeValues: null, htmlAttributes: new { title = "Manage" })
+                    @Html.ActionLink("Admin", "Index", "Admin", routeValues: new { id = urlEmail }, htmlAttributes: new { title = "Manage" }) 
                 </li>
             }
         }
