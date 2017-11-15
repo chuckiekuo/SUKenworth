@@ -14,7 +14,7 @@ namespace SUKenworth.Models
             String.Empty
         });
 
-        public string GetError(int i)
+        public string getError(int i)
         {
             return errors[i];
         }
