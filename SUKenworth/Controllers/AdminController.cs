@@ -14,7 +14,7 @@ namespace SUKenworth.Controllers
             return View();
         }
 
-        public string[] getUserInfo(RegisterViewModel registerViewModel)
+        public string[] Getuserinfo(RegisterViewModel registerViewModel)
         {
             /*retrieve a list of users and their info and then
              *return that list to the view*/
