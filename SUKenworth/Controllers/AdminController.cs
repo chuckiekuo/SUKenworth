@@ -3,18 +3,67 @@ using System;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using ExtensionMethods;
+using Microsoft.AspNet.Identity.Owin;
+using Microsoft.AspNet.Identity;
+using System.Collections.Generic;
 
 namespace SUKenworth.Controllers
 {
     public class AdminController : Controller
     {
-        // GET: Admin
-        public ActionResult Index()
+        private ApplicationUserManager _userManager;
+        public ApplicationUserManager UserManager
         {
-            return View();
+            get
+            {
+                return _userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            }
+            private set
+            {
+                _userManager = value;
+            }
         }
 
-        public string[] getUserInfo(RegisterViewModel registerViewModel)
+
+        // GET: Admin
+        public ActionResult Index(string id = null)
+        {
+            if (id == null)
+            {
+                return RedirectToAction("Error");
+            }
+
+            string[] newId = id.Split('0');
+            string finalId = newId[0] + "." + newId[4];
+
+            var user = UserManager.FindByName(finalId);
+
+            if (user.AdminUser == true)
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Index");
+            }
+
+        }
+
+        public ActionResult ListUsers()
+        {
+            List<ApplicationUser> myList = UserManager.Users.ToList<ApplicationUser>();
+            List<string> usernames = new List<string>();
+
+            for (int i = 0; i < myList.Count(); i++)
+            {
+                usernames.Add(myList[i].Email);
+            }
+
+            return View(usernames);
+        }
+
+        public string[] Getuserinfo(RegisterViewModel registerViewModel)
         {
             /*retrieve a list of users and their info and then
              *return that list to the view*/

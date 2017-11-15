@@ -1,0 +1,11 @@
+﻿@using Microsoft.AspNet.Identity
+@using SUKenworth.Models;
+@model List<string>
+
+<h2>View</h2>
+
+@foreach (var item in Model)
+{
+    @Html.ActionLink("Admin Privleges for " + item, "AddAdmin", new { id = item })
+    <br />
+}
