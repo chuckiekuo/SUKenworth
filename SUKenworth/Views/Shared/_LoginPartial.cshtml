@@ -13,7 +13,7 @@
         </li>
 
         @{
-            var isAdmin = User.Identity.;
+            var isAdmin = User.Identity.GetIsAdminUser();
 
             if (isAdmin)
             {
