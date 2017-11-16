@@ -7,6 +7,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using SUKenworth.Models;
+using ExtensionMethods;
 
 namespace SUKenworth.Controllers
 {
@@ -50,6 +51,14 @@ namespace SUKenworth.Controllers
             }
         }
 
+        public bool IsUserAdminUser(string userId)
+        {
+            var myUser = UserManager.FindById(userId);
+            return myUser.AdminUser;
+            //var myUser = UserManager.FindById(userId);
+
+            //return myUser.AdminUser;
+        }
         //
         // GET: /Manage/Index
         public async Task<ActionResult> Index(ManageMessageId? message)
@@ -64,14 +73,29 @@ namespace SUKenworth.Controllers
                 : String.Empty;
 
             var userId = User.Identity.GetUserId();
+
+            var myUser = UserManager.FindById(userId);
+
+
             var model = new IndexViewModel
             {
                 HasPassword = HasPassword(),
-                PhoneNumber = await UserManager.GetPhoneNumberAsync(userId),
-                TwoFactor = await UserManager.GetTwoFactorEnabledAsync(userId),
+                PhoneNumber = myUser.PhoneNumber,
+                TwoFactor = myUser.TwoFactorEnabled,
+                AdminUser = myUser.AdminUser,
                 Logins = await UserManager.GetLoginsAsync(userId),
-                BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId)
+                BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId),
             };
+
+            //var model = new IndexViewModel
+            //{
+            //    HasPassword = HasPassword(),
+            //    PhoneNumber = await UserManager.GetPhoneNumberAsync(userId),
+            //    TwoFactor = await UserManager.GetTwoFactorEnabledAsync(userId),
+            //    Logins = await UserManager.GetLoginsAsync(userId),
+            //    BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId),
+            //    AdminUser = User.Identity.GetIsAdminUser()
+            //};
             return View(model);
         }
 

@@ -1,6 +1,8 @@
 ﻿using System.Security.Claims;
 using System.Security.Principal;
 using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
+using SUKenworth.Controllers;
 
 namespace ExtensionMethods
 {
@@ -14,20 +16,26 @@ namespace ExtensionMethods
                 return false;
             }
 
-            var claim = ((ClaimsIdentity)identity).FindFirst("AdminUser");
-            // Test for null to avoid issues during local testing
+            var userId = identity.GetUserId();
 
-            if (claim == null)
-            {
-                return false;
-            }
+            
 
-            if (claim.Value.Equals("True"))
-            {
-                return true;
-            }
+            return new ManageController().IsUserAdminUser(userId);
 
-            return false;
+            //var claim = ((ClaimsIdentity)identity).FindFirst("AdminUser");
+            //// Test for null to avoid issues during local testing
+
+            //if (claim == null)
+            //{
+            //    return false;
+            //}
+
+            //if (claim.Value.Equals("True"))
+            //{
+            //    return true;
+            //}
+
+            //return false;
         }
     }
 }
