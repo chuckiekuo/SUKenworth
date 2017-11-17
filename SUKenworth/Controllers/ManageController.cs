@@ -51,14 +51,14 @@ namespace SUKenworth.Controllers
             }
         }
 
-        public bool IsUserAdminUser(string userId)
-        {
-            var myUser = UserManager.FindById(userId);
-            return myUser.AdminUser;
-            //var myUser = UserManager.FindById(userId);
+        //public bool IsUserAdminUser(string userId)
+        //{
+        //    var myUser = UserManager.FindById(userId);
+        //    return myUser.AdminUser;
+        //    //var myUser = UserManager.FindById(userId);
 
-            //return myUser.AdminUser;
-        }
+        //    //return myUser.AdminUser;
+        //}
         //
         // GET: /Manage/Index
         public async Task<ActionResult> Index(ManageMessageId? message)
@@ -82,7 +82,7 @@ namespace SUKenworth.Controllers
                 HasPassword = HasPassword(),
                 PhoneNumber = myUser.PhoneNumber,
                 TwoFactor = myUser.TwoFactorEnabled,
-                AdminUser = myUser.AdminUser,
+                AdminUser = User.Identity.GetIsAdminUser(),
                 Logins = await UserManager.GetLoginsAsync(userId),
                 BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId),
             };

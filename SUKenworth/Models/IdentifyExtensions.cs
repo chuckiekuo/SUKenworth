@@ -16,26 +16,22 @@ namespace ExtensionMethods
                 return false;
             }
 
-            var userId = identity.GetUserId();
+            // return new ManageController().IsUserAdminUser(userId);
 
-            
+            var claim = ((ClaimsIdentity)identity).FindFirst("AdminUser");
+            // Test for null to avoid issues during local testing
 
-            return new ManageController().IsUserAdminUser(userId);
+            if (claim == null)
+            {
+                return false;
+            }
 
-            //var claim = ((ClaimsIdentity)identity).FindFirst("AdminUser");
-            //// Test for null to avoid issues during local testing
+            if (claim.Value.Equals("True"))
+            {
+                return true;
+            }
 
-            //if (claim == null)
-            //{
-            //    return false;
-            //}
-
-            //if (claim.Value.Equals("True"))
-            //{
-            //    return true;
-            //}
-
-            //return false;
+            return false;
         }
     }
 }

@@ -14,14 +14,11 @@ namespace SUKenworth.Models
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
             var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
 
-            userIdentity.AddClaim(new Claim("AdminUser", this.AdminUser.ToString()));
-
-
             // Add custom user claims here
             return userIdentity;
         }
 
-        public bool AdminUser = true;
+        //public bool AdminUser = false;
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>

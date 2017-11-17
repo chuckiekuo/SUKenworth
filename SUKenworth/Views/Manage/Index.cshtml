@@ -1,6 +1,11 @@
-﻿@model SUKenworth.Models.IndexViewModel
+﻿@using Microsoft.AspNet.Identity;
+@using Microsoft.AspNet.Identity.Owin;
+@using Microsoft.Owin.Security;
+@using ExtensionMethods;
+@model SUKenworth.Models.IndexViewModel
 @{
     ViewBag.Title = "Manage";
+    var userID = User.Identity.GetUserId();
 }
 
 <h2>@ViewBag.Title.</h2>
@@ -87,8 +92,10 @@
 
         <dt>AdminUser</dt>
         <dd>
-            @Model.AdminUser
+                @User.Identity.GetIsAdminUser()
+                @Html.ActionLink("Toggle", "ToggleAdmin",new { Controller = "Admin", id= userID})
         </dd>
+
 
     </dl>
 </div>

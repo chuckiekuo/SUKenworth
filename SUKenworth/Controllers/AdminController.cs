@@ -7,6 +7,9 @@ using ExtensionMethods;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.AspNet.Identity;
 using System.Collections.Generic;
+using System.Security.Claims;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace SUKenworth.Controllers
 {
@@ -39,7 +42,7 @@ namespace SUKenworth.Controllers
 
             var user = UserManager.FindByName(finalId);
 
-            if (user.AdminUser == true)
+            if (User.Identity.GetIsAdminUser())
             {
                 return View();
             }
@@ -61,6 +64,22 @@ namespace SUKenworth.Controllers
             }
 
             return View(usernames);
+        }
+
+        public async Task<ActionResult> ToggleAdmin(string id)
+        {
+            // TODO: this code is not working, It should remove the claim, but the remove is not reflected in the DB.  Need to investigate how to have the remove save to the DB...
+            if (User.Identity.GetIsAdminUser())
+            {
+                await UserManager.RemoveClaimAsync(id, new Claim("AdminUser", "True"));
+            }
+            else
+            {
+                await UserManager.AddClaimAsync(id, new Claim("AdminUser", "True"));
+            }
+
+            return RedirectToAction("Index","Manage", new { });
+
         }
 
         public string[] Getuserinfo(RegisterViewModel registerViewModel)
