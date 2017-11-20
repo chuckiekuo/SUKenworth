@@ -206,7 +206,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="App_Start\DataConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -225,24 +224,7 @@
     <Compile Include="Models\IdentifyExtensions.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\TestDataModels\TestData.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TestData.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\TestDataModels\TestData.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TestData.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\TestDataModels\TestData.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>TestData.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\TestDataModels\User.cs">
-      <DependentUpon>TestData.tt</DependentUpon>
-    </Compile>
+    <Compile Include="Models\TestDataModels\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -347,24 +329,7 @@
     <Content Include="Content\bootstrap\badges.less" />
     <Content Include="Content\bootstrap\alerts.less" />
     <Content Include="Bundles.config" />
-    <EntityDeploy Include="Models\TestDataModels\TestData.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>TestData.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\TestDataModels\TestData.edmx.diagram">
-      <DependentUpon>TestData.edmx</DependentUpon>
-    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Models\TestDataModels\TestData.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>TestData.edmx</DependentUpon>
-      <LastGenOutput>TestData.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\TestDataModels\TestData.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>TestData.edmx</DependentUpon>
-      <LastGenOutput>TestData.cs</LastGenOutput>
-    </Content>
     <Content Include="Scripts\bootstrap-datetimepicker.js" />
     <Content Include="Scripts\bootstrap-datetimepicker.min.js" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />

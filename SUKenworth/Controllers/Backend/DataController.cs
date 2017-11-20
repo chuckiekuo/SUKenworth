@@ -1,38 +1,120 @@
 ﻿namespace SUKenworth.Controllers.Backend
 {
     using System;
-    using System.Collections;
-    using System.Collections.Generic;
-    using System.Web;
+     using System.Collections.Generic;
     using System.Web.Mvc;
     using System.Linq;
-    using System.Xml;
     using System.Xml.Linq;
-    using SUKenworth.Models;
     using SUKenworth.Models.TestDataModels;
-    using SUKenworth.App_Start;
+    using System.Configuration;
+    using System.Data.SqlClient;
+    using System.Data.Entity.Core.EntityClient;
+
+
 
     public class DataController : Controller
     {
+        private struct Queries
+        {
+            public string SelectAll { get; set; }
+            public string SelectUser { get; set; }
+            public string CreateUser { get; set; }
+            public string DeleteUser { get; set; }
+            public string UpdateUser { get; set; }
+        }
+
+        private const string DEFAULT_DB = "KenworthProjectsTestEntities";
+        private const string DEFAULT_PROVIDER = "System.Data.SqlClient";
+
         private XDocument xmlDocument;
 
-        // GET: Data
+        private string connectionString;
+
+        private SqlConnection myConnection;
+
+        private Queries myQueries;
+
+        public DataController (string dbName = DEFAULT_DB)
+        {
+            connectionString = "data source = kenworthprojects.database.windows.net; initial catalog = KenworthProjectsTest; persist security info = True; user id = su_admin; password = Kenworth!; MultipleActiveResultSets = True; App = EntityFramework";
+
+            if (dbName == DEFAULT_DB)
+            {
+                myQueries.SelectAll = "SELECT * FROM dbo.User";
+                myQueries.SelectUser = "";
+                myQueries.CreateUser = "";
+                myQueries.DeleteUser = "";
+                myQueries.UpdateUser = "";
+            }
+        }
+
+        public void NewConnection(string SQLConnection)
+        {
+            connectionString = SQLConnection;
+        }
+
+        public List<UserModel> GetUsers()
+        {
+            List<UserModel> users = new List<UserModel>();
+
+            using (myConnection)
+            {
+                var command = new SqlCommand(myQueries.SelectAll, myConnection);
+                myConnection.Open();
+
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        UserModel tempUser = new UserModel();
+                        Object[] columns = new Object[reader.FieldCount];
+
+                        reader.GetValues(columns);
+
+                        tempUser.Id = (int)columns[0];
+                        tempUser.Username = (string)columns[1];
+                        tempUser.Password = (string)columns[2];
+                        tempUser.Admin = (bool)columns[3];
+
+                        users.Add(tempUser);
+                    }
+                }
+            }
+            return users;
+        }
+
+        public void DirectCreate(UserModel user)
+        {
+
+        }
+
+        public void DirectDelete(UserModel user)
+        {
+
+        }
+
+        public void DirectUpdate(UserModel user)
+        {
+
+        }
+
+        public void ClearDataBase()
+        {
+
+        }
+
+        // Set TestData
         public void InitTestData()
         {
-            ScrubDB();
+            ClearDataBase();
             DefineTestData();
             LoadTestData();
         }
 
-        private void ScrubDB()
-        {
-            // Clear out all pre-existing test data from the test Database
-            DataConfig.ClearDataBase();
-        }
 
         private void LoadTestData()
         {
-            List<User> tempList = new List<User>();
+            List<UserModel> tempList = new List<UserModel>();
 
             // Extract test data from XDoc and store in List<>
             IEnumerable<XElement> users =
@@ -44,7 +126,7 @@
             {
                 if (user != null && user.Element("Id").Value != null)
                 {
-                    User tempUser = new User();
+                    UserModel tempUser = new UserModel();
                     string x = user.Element("Id").Value;
                     if (int.TryParse(x, out int y))
                     {
@@ -58,7 +140,22 @@
                 }
             }
             // Load User List<> into Test Database
-            DataConfig.BulkDirectCreate(tempList);
+            BulkDirectCreate(tempList);
+        }
+
+        public void BulkDirectCreate(IEnumerable<UserModel> inputList)
+        {
+            foreach (var user in inputList)
+            {
+                UserModel temp = new UserModel()
+                {
+                    Id = user.Id,
+                    Username = user.Username,
+                    Password = user.Password,
+                    Admin = user.Admin
+                };
+
+            }
         }
 
         private void DefineTestData(int dataSetCode = 1)
@@ -106,10 +203,6 @@
             }
 
             // TO-DO: Define other test data sets
-        }
-        public List<User> GetTestData()
-        {
-            return DataConfig.GetDataList();
         }
     }
 }

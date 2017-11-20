@@ -28,7 +28,7 @@ namespace SUKenworth.Controllers
 
         public ActionResult Error(int errorCode = 0)
         {
-            
+
             var error = new Models.ErrorModel
             {
                 mErrorCode = errorCode
