@@ -36,7 +36,9 @@
 
         public DataController (string dbName = DEFAULT_DB)
         {
-            connectionString = "data source = kenworthprojects.database.windows.net; initial catalog = KenworthProjectsTest; persist security info = True; user id = su_admin; password = Kenworth!; MultipleActiveResultSets = True; App = EntityFramework";
+            //connectionString = "data source = kenworthprojects.database.windows.net; initial catalog = KenworthProjectsTest; persist security info = True; user id = su_admin; password = Kenworth!; MultipleActiveResultSets = True; App = EntityFramework";
+
+            //myConnection = new SqlConnection(connectionString);
 
             if (dbName == DEFAULT_DB)
             {
@@ -48,9 +50,18 @@
             }
         }
 
-        public void NewConnection(string SQLConnection)
+        public void NewConnection(string dbName)
         {
-            connectionString = SQLConnection;
+            //connectionString = SQLConnection;
+
+            if (dbName == DEFAULT_DB)
+            {
+                myQueries.SelectAll = "SELECT * FROM dbo.User";
+                myQueries.SelectUser = "";
+                myQueries.CreateUser = "";
+                myQueries.DeleteUser = "";
+                myQueries.UpdateUser = "";
+            }
         }
 
         public List<UserModel> GetUsers()
