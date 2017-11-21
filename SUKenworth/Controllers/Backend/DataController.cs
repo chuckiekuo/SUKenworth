@@ -9,7 +9,7 @@
     using System.Configuration;
     using System.Data.SqlClient;
     using System.Data.Entity.Core.EntityClient;
-
+    using SUKenworth.App_Start;
 
 
     public class DataController : Controller
@@ -23,7 +23,7 @@
             public string UpdateUser { get; set; }
         }
 
-        private const string DEFAULT_DB = "KenworthProjectsTestEntities";
+        private const string DEFAULT_DB = "KenworthProjectsTest";
         private const string DEFAULT_PROVIDER = "System.Data.SqlClient";
 
         private XDocument xmlDocument;
@@ -36,32 +36,29 @@
 
         public DataController (string dbName = DEFAULT_DB)
         {
-            //connectionString = "data source = kenworthprojects.database.windows.net; initial catalog = KenworthProjectsTest; persist security info = True; user id = su_admin; password = Kenworth!; MultipleActiveResultSets = True; App = EntityFramework";
-
-            //myConnection = new SqlConnection(connectionString);
-
-            if (dbName == DEFAULT_DB)
+            if(dbName == DEFAULT_DB)
             {
-                myQueries.SelectAll = "SELECT * FROM dbo.User";
+                connectionString = DataConfig.TestDatabase1;
+
+                //TO-DO Complete CRUDIS Query set
+                myQueries.SelectAll = "SELECT * FROM dbo.[User]";
                 myQueries.SelectUser = "";
                 myQueries.CreateUser = "";
                 myQueries.DeleteUser = "";
                 myQueries.UpdateUser = "";
             }
-        }
-
-        public void NewConnection(string dbName)
-        {
-            //connectionString = SQLConnection;
-
-            if (dbName == DEFAULT_DB)
+            else
             {
-                myQueries.SelectAll = "SELECT * FROM dbo.User";
+                connectionString = DataConfig.TestDatabase2;
+                //TO-DO Complete CRUDIS Query set
+                myQueries.SelectAll = "";
                 myQueries.SelectUser = "";
                 myQueries.CreateUser = "";
                 myQueries.DeleteUser = "";
                 myQueries.UpdateUser = "";
             }
+            
+            myConnection = new SqlConnection(connectionString);
         }
 
         public List<UserModel> GetUsers()
@@ -90,28 +87,42 @@
                         users.Add(tempUser);
                     }
                 }
+                myConnection.Close();
             }
             return users;
         }
 
         public void DirectCreate(UserModel user)
         {
-
+            // ASAAAAAAAAAAAAAAAAAA
+            //TO-DO Complete Method
+            //Probably an INSERT "do research"
+            //Parse Data
+            //Open SQL Connection
         }
 
         public void DirectDelete(UserModel user)
         {
-
+            // JOSHUAAAAAAAAAAAAAAAAAAAAA
+            //TO-DO Complete Method
+            //Probably an DELETE do research
+            //Parse Data
+            //Open SQL Connection
         }
 
         public void DirectUpdate(UserModel user)
         {
-
+            // DOMMMMMMMMM
+            //TO-DO Complete Method
+            //Probably an DELETE do research
+            //Parse Data
+            //Open SQL Connection
         }
 
         public void ClearDataBase()
         {
-
+            //TO-DO Complete Method
+            //WILLIEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
         }
 
         // Set TestData
@@ -135,23 +146,8 @@
             // Convert XElement List<> into User List<>
             foreach (XElement user in users)
             {
-                if (user != null && user.Element("Id").Value != null)
-                {
-                    UserModel tempUser = new UserModel();
-                    string x = user.Element("Id").Value;
-                    if (int.TryParse(x, out int y))
-                    {
-                        tempUser.Id = y;
-                    }
-
-                    tempUser.Username = user.Element("Username").Value;
-                    tempUser.Password = user.Element("Password").Value;
-                    tempUser.Admin = Convert.ToBoolean(user.Element("Admin").Value);
-                    tempList.Add(tempUser);
-                }
+                //  TO-DO: Rewrite using SqlConnection
             }
-            // Load User List<> into Test Database
-            BulkDirectCreate(tempList);
         }
 
         public void BulkDirectCreate(IEnumerable<UserModel> inputList)
@@ -160,12 +156,8 @@
             {
                 UserModel temp = new UserModel()
                 {
-                    Id = user.Id,
-                    Username = user.Username,
-                    Password = user.Password,
-                    Admin = user.Admin
+                    //  TO-DO: Rewrite using SqlConnection
                 };
-
             }
         }
 
