@@ -43,7 +43,7 @@
                 //TO-DO Complete CRUDIS Query set
                 myQueries.SelectAll = "SELECT * FROM dbo.[User]";
                 myQueries.SelectUser = "";
-                myQueries.CreateUser = "";
+                myQueries.CreateUser = "";//"INSER into dbo.[User] Values(\"\" + id + \",\" + username + \",\" + password + \",\" + admin + \"\")";
                 myQueries.DeleteUser = "";
                 myQueries.UpdateUser = "";
             }
@@ -94,11 +94,21 @@
 
         public void DirectCreate(UserModel user)
         {
-            // ASAAAAAAAAAAAAAAAAAA
-            //TO-DO Complete Method
-            //Probably an INSERT "do research"
-            //Parse Data
-            //Open SQL Connection
+            //not certain how to test so I am leaving it commented out
+            /*
+            int id = user.Id;
+            string username = user.Username;
+            string password = user.Password;
+            bool admin = user.Admin;
+
+            using (myConnection)
+            {
+                var command = new SqlCommand(myQueries.CreateUser, myConnection);
+                myConnection.Open();
+                command.ExecuteNonQuery();
+                myConnection.Close();
+            }
+            */
         }
 
         public void DirectDelete(UserModel user)
