@@ -4,14 +4,33 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using SUKenworth.Controllers.Backend;
+using SUKenworth.Models.TestDataModels;
 
 namespace SUKenworth.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        private Backend.DataController myBackend;
+
+        public ActionResult SetDatabase()
         {
             return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult SetDatabase([Bind(Include =
+
+            "Name"+
+
+            "")] DatabaseModel database)
+        {
+            // TO-DO: Error Checking for Connection
+            if(database.Name.Length > 0)
+            {
+                myBackend = new Backend.DataController(database.Name);
+            }
+            return RedirectToAction("SetDatabase");
         }
 
         public ActionResult About()

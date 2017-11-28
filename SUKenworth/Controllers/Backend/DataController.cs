@@ -17,13 +17,14 @@
         private struct Queries
         {
             public string SelectAll { get; set; }
+            public string DeleteAll { get; set; }
             public string SelectUser { get; set; }
             public string CreateUser { get; set; }
             public string DeleteUser { get; set; }
             public string UpdateUser { get; set; }
         }
 
-        private const string DEFAULT_DB = "KenworthProjectsTest";
+        private const string DEFAULT_DB = "TestDatabase1";
         private const string DEFAULT_PROVIDER = "System.Data.SqlClient";
 
         private XDocument xmlDocument;
@@ -42,6 +43,7 @@
 
                 //TO-DO Complete CRUDIS Query set
                 myQueries.SelectAll = "SELECT * FROM dbo.[User]";
+                myQueries.DeleteAll = "DELETE * FROM dbo.[User] ";
                 myQueries.SelectUser = "";
                 myQueries.CreateUser = "";//"INSER into dbo.[User] Values(\"\" + id + \",\" + username + \",\" + password + \",\" + admin + \"\")";
                 myQueries.DeleteUser = "";
@@ -52,6 +54,7 @@
                 connectionString = DataConfig.TestDatabase2;
                 //TO-DO Complete CRUDIS Query set
                 myQueries.SelectAll = "";
+                myQueries.DeleteAll = "";
                 myQueries.SelectUser = "";
                 myQueries.CreateUser = "";
                 myQueries.DeleteUser = "";
@@ -133,6 +136,13 @@
         {
             //TO-DO Complete Method
             //WILLIEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+            using (myConnection)
+            {
+                var command = new SqlCommand(myQueries.DeleteAll, myConnection);
+                myConnection.Open();
+                command.ExecuteNonQuery();
+                myConnection.Close();
+            }
         }
 
         // Set TestData
