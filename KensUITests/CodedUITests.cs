@@ -37,6 +37,9 @@ namespace KensUITests
             //!Make sure to add the path to where you extracting the chromedriver.exe:
             using (IWebDriver driver = new ChromeDriver(Extensions.ChromeDriverLocation))//<-Add your path
             {
+                //set an implicit wait time before any search for an item fails
+                driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(Extensions.MaxWaitTime);
+
                 //navigate to the kenworth page
                 driver.Navigate().GoToUrl(Extensions.Homepage);
 
@@ -74,6 +77,9 @@ namespace KensUITests
             //!Make sure to add the path to where you extracting the chromedriver.exe:
             using (IWebDriver driver = new ChromeDriver(Extensions.ChromeDriverLocation))//<-Add your path
             {
+                //set an implicit wait time before any search for an item fails
+                driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(Extensions.MaxWaitTime);
+
                 //navigate to the kenworth page
                 driver.Navigate().GoToUrl(Extensions.Homepage);
 
@@ -241,12 +247,6 @@ namespace KensUITests
 
                 //submit
                 driver.FindElement(By.Name("LogInSubmit")).Click();
-
-                //set a wait for page to render
-                var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(Extensions.MaxWaitTime));
-
-                //set a wait until
-                wait.Until(d => d.FindElement(By.Name("LogOffSubmit")));
 
                 //check that page is the right page
 
