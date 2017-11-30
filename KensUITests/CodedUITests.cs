@@ -40,6 +40,9 @@ namespace KensUITests
                 //navigate to the kenworth page
                 driver.Navigate().GoToUrl(Extensions.Homepage);
 
+                //check that page is the right page
+
+
                 //find the email box to input username info
                 IWebElement emailBox = driver.FindElement(By.Id("Email"));
 
@@ -70,6 +73,9 @@ namespace KensUITests
             {
                 //navigate to the kenworth page
                 driver.Navigate().GoToUrl(Extensions.Homepage);
+
+                //check that page is the right page
+
 
                 //find the email box to input username info
                 IWebElement emailBox = driver.FindElement(By.Id("Email"));
@@ -166,6 +172,9 @@ namespace KensUITests
                 //navigate to the kenworth page
                 driver.Navigate().GoToUrl(Extensions.Homepage);
 
+                //check that page is the right page
+
+
                 //find the email box to input username info
                 IWebElement emailBox = driver.FindElement(By.Id("Email"));
 
@@ -188,6 +197,9 @@ namespace KensUITests
                 //IWebElement myDynamicElement = wait.Until<IWebElement>(d => d.FindElement(By.Name("LogOffSubmit")));
                 wait.Until(d => d.FindElement(By.Name("LogOffSubmit")));
 
+                //check that page is the right page
+
+
                 //find the log out button and click it
                 driver.FindElement(By.Name("LogOffSubmit")).Click();
 
@@ -209,6 +221,9 @@ namespace KensUITests
                 //navigate to the kenworth page
                 driver.Navigate().GoToUrl(Extensions.Homepage);
 
+                //check that page is the right page
+
+
                 //find the email box to input username info
                 IWebElement emailBox = driver.FindElement(By.Id("Email"));
 
@@ -229,6 +244,9 @@ namespace KensUITests
 
                 //set a wait until
                 wait.Until(d => d.FindElement(By.Name("LogOffSubmit")));
+
+                //check that page is the right page
+
 
                 //find the log out button and click it
                 driver.FindElement(By.Name("LogOffSubmit")).Click();
