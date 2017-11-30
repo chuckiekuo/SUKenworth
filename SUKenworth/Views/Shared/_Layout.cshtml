@@ -40,5 +40,16 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+
+    @{
+        var myAreaID = "Area-" + ViewContext.RouteData.DataTokens["area"] + "-Done";
+        var myControllerID = "Controller-" + ViewContext.Controller.ValueProvider.GetValue("controller").RawValue + "-Done";
+        var myActionID = "View-" + ViewContext.RouteData.Values["action"] + "-Done";
+    }
+
+    <div id="Page-Done"></div>
+    <div id="@myAreaID"></div>
+    <div id="@myControllerID"></div>
+    <div id="@myActionID"></div>
 </body>
 </html>
