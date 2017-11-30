@@ -23,18 +23,34 @@ namespace KensUITests
         private const string ScreenshotLocation = "C:/Users/oslandt/Desktop/Screenshots";
 
 
-
-        //log in details for admin user
-        public const string ValidEmailAdmin1 = "testOMGTEST@gmail.com";
-        public const string ValidPasswordAdmin1 = "123456";
-
-        //log in details for nonadmin user
+        //log in details for nonadmin valid
         public const string ValidEmailNotAdmin1 = "userTest@gmail.com";
         public const string ValidPasswordNotAdmin1 = "123456";
 
-        //log in details for user to be registered correctly
+        //log in details for admin valid
+        public const string ValidEmailAdmin1 = "testOMGTEST@gmail.com";
+        public const string ValidPasswordAdmin1 = "123456";
+
+
+        //log in details for nonadmin invalid
+
+
+        //log in details for admin invalid
+
+
+
+        //log in details for nonadmin to be valid registered 
         public const string ValidEmailNotAdmin2 = "UITestUser@paccar.com";
         public const string ValidPasswordNotAdmin2 = "123456";
+
+        //log in details for admin to be valid registered
+        public const string ValidEmailAdmin2 = "UITestAdmin@paccar.com";
+        public const string ValidPasswordAdmin2 = "123456";
+
+        //log in details for nonadmin users to be invalid regsitered
+
+
+        //log in details for admin users to be invalid registered
 
 
         //maximum time to wait for a browser page to load
