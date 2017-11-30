@@ -41,7 +41,10 @@ namespace KensUITests
                 driver.Navigate().GoToUrl(Extensions.Homepage);
 
                 //check that page is the right page
-
+                driver.FindElement(By.Id("Page-Done"));
+                driver.FindElement(By.Id("Area--Done"));
+                driver.FindElement(By.Id("Controller-Account-Done"));
+                driver.FindElement(By.Id("View-Login-Done"));
 
                 //find the email box to input username info
                 IWebElement emailBox = driver.FindElement(By.Id("Email"));
@@ -191,11 +194,11 @@ namespace KensUITests
                 driver.FindElement(By.Name("LogInSubmit")).Click();
 
                 //set a wait for page to render
-                var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(Extensions.MaxWaitTime));
+                //var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(Extensions.MaxWaitTime));
 
                 //set a wait until
                 //IWebElement myDynamicElement = wait.Until<IWebElement>(d => d.FindElement(By.Name("LogOffSubmit")));
-                wait.Until(d => d.FindElement(By.Name("LogOffSubmit")));
+                //wait.Until(d => d.FindElement(By.Name("LogOffSubmit")));
 
                 //check that page is the right page
 
