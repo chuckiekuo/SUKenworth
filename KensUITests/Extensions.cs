@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Support.UI;
 
 namespace KensUITests
 {
@@ -17,7 +20,7 @@ namespace KensUITests
         public const string ChromeDriverLocation = "C:/Users/oslandt/Desktop/KenworthTeamsCommonProject/SUKenworth/KensUITests";
 
         //location to store screenshots in
-        public const string ScreenshotLocation = "C:/Users/oslandt/Desktop/Screenshots";
+        private const string ScreenshotLocation = "C:/Users/oslandt/Desktop/Screenshots";
 
 
 
@@ -47,6 +50,50 @@ namespace KensUITests
             string finalFormat = originalFormat.Replace(":", "-");
 
             return finalFormat;
+        }
+
+        //used only for extreme error checking
+        public static void TakeScreenshot(IWebDriver driver)
+        {
+            //save a screenshot of the result
+            try
+            {
+                //take the screenshot
+                Screenshot ss = ((ITakesScreenshot)driver).GetScreenshot();
+
+                //create the name of the sceenshot
+                string ssName = Extensions.ScreenshotLocation + Extensions.CurrentDateTimeFileStringFormat() + ".jpg";
+
+                //store the screenshot
+                ss.SaveAsFile(ssName, ScreenshotImageFormat.Jpeg);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                throw;
+            }
+        }
+
+        //use only for extreme error checking
+        public static void TakeScreenshot(IWebDriver driver, string funcName)
+        {
+            //save a screenshot of the result
+            try
+            {
+                //take the screenshot
+                Screenshot ss = ((ITakesScreenshot)driver).GetScreenshot();
+
+                //create the name of the sceenshot
+                string ssName = Extensions.ScreenshotLocation + funcName + Extensions.CurrentDateTimeFileStringFormat() + ".jpg";
+
+                //store the screenshot
+                ss.SaveAsFile(ssName, ScreenshotImageFormat.Jpeg);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                throw;
+            }
         }
     }
 }

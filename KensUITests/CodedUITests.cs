@@ -55,23 +55,9 @@ namespace KensUITests
                 //submit
                 driver.FindElement(By.Name("LogInSubmit")).Click();
 
-                //save a screenshot of the result
-                try
-                {
-                    //take the screenshot
-                    Screenshot ss = ((ITakesScreenshot)driver).GetScreenshot();
+                //check that page is the right page
 
-                    //create the name of the sceenshot
-                    string ssName = Extensions.ScreenshotLocation + "/ValidLogInAdmin" + Extensions.CurrentDateTimeFileStringFormat() + ".jpg";
 
-                    //store the screenshot
-                    ss.SaveAsFile(ssName, ScreenshotImageFormat.Jpeg);
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine(e.Message);
-                    throw;
-                }
             }
 
         }
@@ -100,23 +86,8 @@ namespace KensUITests
                 //submit
                 driver.FindElement(By.Name("LogInSubmit")).Click();
 
-                //save a screenshot of the result
-                try
-                {
-                    //take the screenshot
-                    Screenshot ss = ((ITakesScreenshot)driver).GetScreenshot();
+                //check that page is the right page
 
-                    //create the name of the sceenshot
-                    string ssName = Extensions.ScreenshotLocation + "/ValidLogInNotAdmin" + Extensions.CurrentDateTimeFileStringFormat() + ".jpg";
-
-                    //store the screenshot
-                    ss.SaveAsFile(ssName, ScreenshotImageFormat.Jpeg);
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine(e.Message);
-                    throw;
-                }
             }
 
         }
@@ -133,171 +104,52 @@ namespace KensUITests
                 //navigate to the kenworth page
                 driver.Navigate().GoToUrl(Extensions.Homepage);
 
-                //save a screenshot of the result
-                try
-                {
-                    //take the screenshot
-                    Screenshot ss = ((ITakesScreenshot)driver).GetScreenshot();
+                //check that page is the right page
 
-                    //create the name of the sceenshot
-                    string ssName = Extensions.ScreenshotLocation + "/NoLogInHomepage" + Extensions.CurrentDateTimeFileStringFormat() + ".jpg";
-
-                    //store the screenshot
-                    ss.SaveAsFile(ssName, ScreenshotImageFormat.Jpeg);
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine(e.Message);
-                    throw;
-                }
 
                 //click register, should take you to register page
                 driver.FindElement(By.Id("registerLink")).Click();
 
-                //save a screenshot of the result
-                try
-                {
-                    //take the screenshot
-                    Screenshot ss = ((ITakesScreenshot)driver).GetScreenshot();
+                //check that page is the right page
 
-                    //create the name of the sceenshot
-                    string ssName = Extensions.ScreenshotLocation + "/NoLogInRegisterFromNav" + Extensions.CurrentDateTimeFileStringFormat() + ".jpg";
-
-                    //store the screenshot
-                    ss.SaveAsFile(ssName, ScreenshotImageFormat.Jpeg);
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine(e.Message);
-                    throw;
-                }
 
                 //click log in, should take you to the log in page again
                 driver.FindElement(By.Id("loginLink")).Click();
 
-                //save a screenshot of the result
-                try
-                {
-                    //take the screenshot
-                    Screenshot ss = ((ITakesScreenshot)driver).GetScreenshot();
+                //check that page is the right page
 
-                    //create the name of the sceenshot
-                    string ssName = Extensions.ScreenshotLocation + "/NoLogInLogin" + Extensions.CurrentDateTimeFileStringFormat() + ".jpg";
-
-                    //store the screenshot
-                    ss.SaveAsFile(ssName, ScreenshotImageFormat.Jpeg);
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine(e.Message);
-                    throw;
-                }
 
                 //click register as a new user link on login page
                 driver.FindElement(By.Id("registerLinkOnPage")).Click();
 
-                //save a screenshot of the result
-                try
-                {
-                    //take the screenshot
-                    Screenshot ss = ((ITakesScreenshot)driver).GetScreenshot();
-
-                    //create the name of the sceenshot
-                    string ssName = Extensions.ScreenshotLocation + "/NoLogInRegisterFromPage" + Extensions.CurrentDateTimeFileStringFormat() + ".jpg";
-
-                    //store the screenshot
-                    ss.SaveAsFile(ssName, ScreenshotImageFormat.Jpeg);
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine(e.Message);
-                    throw;
-                }
+                //check that page is the right page
+                
 
                 //click contact, should take you to contact page
                 driver.FindElement(By.Id("contactLinkNavBar")).Click();
 
-                //save a screenshot of the result
-                try
-                {
-                    //take the screenshot
-                    Screenshot ss = ((ITakesScreenshot)driver).GetScreenshot();
-
-                    //create the name of the sceenshot
-                    string ssName = Extensions.ScreenshotLocation + "/NoLogInContactPage" + Extensions.CurrentDateTimeFileStringFormat() + ".jpg";
-
-                    //store the screenshot
-                    ss.SaveAsFile(ssName, ScreenshotImageFormat.Jpeg);
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine(e.Message);
-                    throw;
-                }
+                //check that page is the right page
+                
 
                 //click about, should take you to about page
                 driver.FindElement(By.Id("aboutLinkNavBar")).Click();
 
-                //save a screenshot of the result
-                try
-                {
-                    //take the screenshot
-                    Screenshot ss = ((ITakesScreenshot)driver).GetScreenshot();
+                //check that page is the right page
 
-                    //create the name of the sceenshot
-                    string ssName = Extensions.ScreenshotLocation + "/NoLogInAboutPage" + Extensions.CurrentDateTimeFileStringFormat() + ".jpg";
 
-                    //store the screenshot
-                    ss.SaveAsFile(ssName, ScreenshotImageFormat.Jpeg);
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine(e.Message);
-                    throw;
-                }
                 //click SetDatabase, should take you to the set database page
                 //click contact, should take you to contact page
                 driver.FindElement(By.Id("setDatabaseNavBar")).Click();
 
-                //save a screenshot of the result
-                try
-                {
-                    //take the screenshot
-                    Screenshot ss = ((ITakesScreenshot)driver).GetScreenshot();
+                //check that page is the right page
 
-                    //create the name of the sceenshot
-                    string ssName = Extensions.ScreenshotLocation + "/NoLogInSetDatabasePage" + Extensions.CurrentDateTimeFileStringFormat() + ".jpg";
-
-                    //store the screenshot
-                    ss.SaveAsFile(ssName, ScreenshotImageFormat.Jpeg);
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine(e.Message);
-                    throw;
-                }
 
                 //click homescreen logo in top left, should take you to homepage(since not logged in this should be log in page)
                 //click contact, should take you to contact page
                 driver.FindElement(By.Id("homeLinkNavBar")).Click();
 
-                //save a screenshot of the result
-                try
-                {
-                    //take the screenshot
-                    Screenshot ss = ((ITakesScreenshot)driver).GetScreenshot();
+                //check that page is the right page
 
-                    //create the name of the sceenshot
-                    string ssName = Extensions.ScreenshotLocation + "/NoLogInHomeLinkNavBar" + Extensions.CurrentDateTimeFileStringFormat() + ".jpg";
-
-                    //store the screenshot
-                    ss.SaveAsFile(ssName, ScreenshotImageFormat.Jpeg);
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine(e.Message);
-                    throw;
-                }
 
             }
         }
@@ -339,23 +191,9 @@ namespace KensUITests
                 //find the log out button and click it
                 driver.FindElement(By.Name("LogOffSubmit")).Click();
 
-                //save a screenshot of the result
-                try
-                {
-                    //take the screenshot
-                    Screenshot ss = ((ITakesScreenshot)driver).GetScreenshot();
+                //check that page is the right page
 
-                    //create the name of the sceenshot
-                    string ssName = Extensions.ScreenshotLocation + "/ValidLogInAndLogOffAdmin" + Extensions.CurrentDateTimeFileStringFormat() + ".jpg";
-
-                    //store the screenshot
-                    ss.SaveAsFile(ssName, ScreenshotImageFormat.Jpeg);
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine(e.Message);
-                    throw;
-                }
+                
             }
         }
 
@@ -395,23 +233,9 @@ namespace KensUITests
                 //find the log out button and click it
                 driver.FindElement(By.Name("LogOffSubmit")).Click();
 
-                //save a screenshot of the result
-                try
-                {
-                    //take the screenshot
-                    Screenshot ss = ((ITakesScreenshot)driver).GetScreenshot();
+                //check that page is the right page
 
-                    //create the name of the sceenshot
-                    string ssName = Extensions.ScreenshotLocation + "/ValidLogInAndLogOffNotAdmin" + Extensions.CurrentDateTimeFileStringFormat() + ".jpg";
 
-                    //store the screenshot
-                    ss.SaveAsFile(ssName, ScreenshotImageFormat.Jpeg);
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine(e.Message);
-                    throw;
-                }
             }
         }
         //add happy path tests for
