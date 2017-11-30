@@ -65,6 +65,7 @@ namespace KensUITests
                 driver.FindElement(By.Name("LogInSubmit")).Click();
 
                 //check that page is the right page
+                //i dunno know what id's to look for, i cannot navigate to the page that naturally comes after a log in
 
 
             }
@@ -84,7 +85,10 @@ namespace KensUITests
                 driver.Navigate().GoToUrl(Extensions.Homepage);
 
                 //check that page is the right page
-
+                driver.FindElement(By.Id("Page-Done"));
+                driver.FindElement(By.Id("Area--Done"));
+                driver.FindElement(By.Id("Controller-Account-Done"));
+                driver.FindElement(By.Id("View-Login-Done"));
 
                 //find the email box to input username info
                 IWebElement emailBox = driver.FindElement(By.Id("Email"));
@@ -102,6 +106,7 @@ namespace KensUITests
                 driver.FindElement(By.Name("LogInSubmit")).Click();
 
                 //check that page is the right page
+                //i dunno know what id's to look for, i cannot navigate to the page that naturally comes after a log in
 
             }
 
@@ -120,50 +125,73 @@ namespace KensUITests
                 driver.Navigate().GoToUrl(Extensions.Homepage);
 
                 //check that page is the right page
+                driver.FindElement(By.Id("Page-Done"));
+                driver.FindElement(By.Id("Area--Done"));
+                driver.FindElement(By.Id("Controller-Account-Done"));
+                driver.FindElement(By.Id("View-Login-Done"));
 
 
                 //click register, should take you to register page
                 driver.FindElement(By.Id("registerLink")).Click();
 
                 //check that page is the right page
-
+                driver.FindElement(By.Id("Page-Done"));
+                driver.FindElement(By.Id("Area--Done"));
+                driver.FindElement(By.Id("Controller-Account-Done"));
+                driver.FindElement(By.Id("View-Register-Done"));
 
                 //click log in, should take you to the log in page again
                 driver.FindElement(By.Id("loginLink")).Click();
 
                 //check that page is the right page
-
+                driver.FindElement(By.Id("Page-Done"));
+                driver.FindElement(By.Id("Area--Done"));
+                driver.FindElement(By.Id("Controller-Account-Done"));
+                driver.FindElement(By.Id("View-Login-Done"));
 
                 //click register as a new user link on login page
                 driver.FindElement(By.Id("registerLinkOnPage")).Click();
 
                 //check that page is the right page
-                
+                driver.FindElement(By.Id("Page-Done"));
+                driver.FindElement(By.Id("Area--Done"));
+                driver.FindElement(By.Id("Controller-Account-Done"));
+                driver.FindElement(By.Id("View-Register-Done"));
 
                 //click contact, should take you to contact page
                 driver.FindElement(By.Id("contactLinkNavBar")).Click();
 
                 //check that page is the right page
-                
+                driver.FindElement(By.Id("Page-Done"));
+                driver.FindElement(By.Id("Area--Done"));
+                driver.FindElement(By.Id("Controller-Home-Done"));
+                driver.FindElement(By.Id("View-Contact-Done"));
 
                 //click about, should take you to about page
                 driver.FindElement(By.Id("aboutLinkNavBar")).Click();
 
                 //check that page is the right page
-
+                driver.FindElement(By.Id("Page-Done"));
+                driver.FindElement(By.Id("Area--Done"));
+                driver.FindElement(By.Id("Controller-Home-Done"));
+                driver.FindElement(By.Id("View-About-Done"));
 
                 //click SetDatabase, should take you to the set database page
                 //click contact, should take you to contact page
                 driver.FindElement(By.Id("setDatabaseNavBar")).Click();
 
                 //check that page is the right page
-
+                driver.FindElement(By.Id("Page-Done"));
+                driver.FindElement(By.Id("Area--Done"));
+                driver.FindElement(By.Id("Controller-Home-Done"));
+                driver.FindElement(By.Id("View-SetDatabase-Done"));
 
                 //click homescreen logo in top left, should take you to homepage(since not logged in this should be log in page)
                 //click contact, should take you to contact page
                 driver.FindElement(By.Id("homeLinkNavBar")).Click();
 
                 //check that page is the right page
+                //i don't know what id's to look for, link is broken
 
 
             }
@@ -182,7 +210,10 @@ namespace KensUITests
                 driver.Navigate().GoToUrl(Extensions.Homepage);
 
                 //check that page is the right page
-
+                driver.FindElement(By.Id("Page-Done"));
+                driver.FindElement(By.Id("Area--Done"));
+                driver.FindElement(By.Id("Controller-Account-Done"));
+                driver.FindElement(By.Id("View-Login-Done"));
 
                 //find the email box to input username info
                 IWebElement emailBox = driver.FindElement(By.Id("Email"));
@@ -207,13 +238,14 @@ namespace KensUITests
                 //wait.Until(d => d.FindElement(By.Name("LogOffSubmit")));
 
                 //check that page is the right page
+                //i don't know what id's to check, cannot get to this page
 
 
                 //find the log out button and click it
                 driver.FindElement(By.Name("LogOffSubmit")).Click();
 
                 //check that page is the right page
-
+                //i don't know what id's to check log off link is broken
                 
             }
         }
@@ -231,7 +263,10 @@ namespace KensUITests
                 driver.Navigate().GoToUrl(Extensions.Homepage);
 
                 //check that page is the right page
-
+                driver.FindElement(By.Id("Page-Done"));
+                driver.FindElement(By.Id("Area--Done"));
+                driver.FindElement(By.Id("Controller-Account-Done"));
+                driver.FindElement(By.Id("View-Login-Done"));
 
                 //find the email box to input username info
                 IWebElement emailBox = driver.FindElement(By.Id("Email"));
@@ -249,13 +284,13 @@ namespace KensUITests
                 driver.FindElement(By.Name("LogInSubmit")).Click();
 
                 //check that page is the right page
-
+                //i don't know what i'ds to check for, link is broken
 
                 //find the log out button and click it
                 driver.FindElement(By.Name("LogOffSubmit")).Click();
 
                 //check that page is the right page
-
+                //link is broken
 
             }
         }
@@ -263,7 +298,7 @@ namespace KensUITests
         // clicking any and all links
         //   toggling admin privleges
         // register a user
-        //  needs a test db for that
+        //  needs a test db that can be wiped for that
         // naviagating site without logging in 
         //
         //add bad paths for
