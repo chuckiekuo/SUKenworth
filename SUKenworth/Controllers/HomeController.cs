@@ -28,7 +28,7 @@ namespace SUKenworth.Controllers
             // TO-DO: Error Checking for Connection
             if(database.Name.Length > 0)
             {
-                myBackend = new Backend.DataController(database.Name);
+                 myBackend = new Backend.DataController(database.Name);
             }
             return RedirectToAction("SetDatabase");
         }

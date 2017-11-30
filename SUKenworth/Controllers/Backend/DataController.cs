@@ -14,6 +14,7 @@
 
     public class DataController : Controller
     {
+        // Dictionary instead??
         private struct Queries
         {
             public string SelectAll { get; set; }
@@ -37,11 +38,15 @@
 
         public DataController (string dbName = DEFAULT_DB)
         {
+            // Make Switch statement
+            // Add benign DEFAULT case
             if(dbName == DEFAULT_DB)
             {
                 connectionString = DataConfig.TestDatabase1;
 
-                //TO-DO Complete CRUDIS Query set
+                // TO-DO Complete CRUDIS Query set
+                // Investigate how to pass complex SQL statement strings
+                // Linq query for formatting and reformatting one data-set
                 myQueries.SelectAll = "SELECT * FROM dbo.[User]";
                 myQueries.DeleteAll = "DELETE * FROM dbo.[User] ";
                 myQueries.SelectUser = "";
@@ -191,8 +196,8 @@
             // Default test data set
             if (dataSetCode == 1)
             {
-
                 // Load test data set into XDoc
+                // Load local XML document, named [databaseName].data
                 xmlDocument = new XDocument(
                 new XDeclaration("1.0", "utf-8", "yes"),
 
