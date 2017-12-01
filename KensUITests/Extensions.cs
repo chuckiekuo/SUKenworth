@@ -14,7 +14,7 @@ namespace KensUITests
         //IMPORTANT:::be sure these file locations are correct for your machine
         //always be sure the website is running before attempting to test
         //URL of the homepage
-        public const string Homepage = "http://localhost:50298/";
+        public const string BaseURL = "http://localhost:50298/";
 
         //file location of the chrome driver
         public const string ChromeDriverLocation = "C:/Users/oslandt/Desktop/KenworthTeamsCommonProject/SUKenworth/KensUITests";
@@ -110,6 +110,28 @@ namespace KensUITests
                 Console.WriteLine(e.Message);
                 throw;
             }
+        }
+
+        public static bool ValidatePageTransition(IWebDriver driver, string Controller, string Action, string Data = null)
+        {
+                driver.FindElement(By.Id("Page-Done"));
+                driver.FindElement(By.Id("Area--Done"));
+                driver.FindElement(By.Id("Controller-"+Controller+"-Done"));
+                driver.FindElement(By.Id("View-"+Action+"-Done"));
+
+            return true;
+        }
+
+        public static bool NavigateToPage(IWebDriver driver, string Controller, string Action, string Data = null)
+        {
+
+            //navigate to the kenworth page
+            driver.Navigate().GoToUrl(Extensions.BaseURL+"/"+Controller+"/"+Action+"/"+Data);
+            
+            //check that page is the right page
+            ValidatePageTransition(driver, Controller, Action);
+
+            return true;
         }
     }
 }

@@ -11,7 +11,7 @@ using Keyboard = Microsoft.VisualStudio.TestTools.UITesting.Keyboard;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
-
+using static KensUITests.Extensions;
 
 namespace KensUITests
 {
@@ -31,46 +31,7 @@ namespace KensUITests
             // To generate code for this test, select "Generate Code for Coded UI Test" from the shortcut menu and select one of the menu items.
         }
 
-        [TestMethod]
-        public void ValidLogInAdmin()
-        {
-            //!Make sure to add the path to where you extracting the chromedriver.exe:
-            using (IWebDriver driver = new ChromeDriver(Extensions.ChromeDriverLocation))//<-Add your path
-            {
-                //set an implicit wait time before any search for an item fails
-                driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(Extensions.MaxWaitTime);
-
-                //navigate to the kenworth page
-                driver.Navigate().GoToUrl(Extensions.Homepage);
-
-                //check that page is the right page
-                driver.FindElement(By.Id("Page-Done"));
-                driver.FindElement(By.Id("Area--Done"));
-                driver.FindElement(By.Id("Controller-Account-Done"));
-                driver.FindElement(By.Id("View-Login-Done"));
-
-                //find the email box to input username info
-                IWebElement emailBox = driver.FindElement(By.Id("Email"));
-
-                //enter a valid email to login
-                emailBox.SendKeys(Extensions.ValidEmailAdmin1);
-
-                //find the password box to input password info    
-                IWebElement passwordBox = driver.FindElement(By.Id("Password"));
-
-                //enter a valid password
-                passwordBox.SendKeys(Extensions.ValidPasswordAdmin1);
-
-                //submit
-                driver.FindElement(By.Name("LogInSubmit")).Click();
-
-                //check that page is the right page
-                //i dunno know what id's to look for, i cannot navigate to the page that naturally comes after a log in
-
-
-            }
-
-        }
+   
 
         [TestMethod]
         public void ValidLogInNotAdmin()
@@ -82,13 +43,11 @@ namespace KensUITests
                 driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(Extensions.MaxWaitTime);
 
                 //navigate to the kenworth page
-                driver.Navigate().GoToUrl(Extensions.Homepage);
+                driver.Navigate().GoToUrl(Extensions.BaseURL);
 
                 //check that page is the right page
-                driver.FindElement(By.Id("Page-Done"));
-                driver.FindElement(By.Id("Area--Done"));
-                driver.FindElement(By.Id("Controller-Account-Done"));
-                driver.FindElement(By.Id("View-Login-Done"));
+                ValidatePageTransition(driver, "Account", "Login");
+
 
                 //find the email box to input username info
                 IWebElement emailBox = driver.FindElement(By.Id("Email"));
@@ -122,7 +81,7 @@ namespace KensUITests
                 driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(Extensions.MaxWaitTime);
 
                 //navigate to the kenworth page
-                driver.Navigate().GoToUrl(Extensions.Homepage);
+                driver.Navigate().GoToUrl(Extensions.BaseURL);
 
                 //check that page is the right page
                 driver.FindElement(By.Id("Page-Done"));
@@ -207,7 +166,7 @@ namespace KensUITests
                 driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(Extensions.MaxWaitTime);
 
                 //navigate to the kenworth page
-                driver.Navigate().GoToUrl(Extensions.Homepage);
+                driver.Navigate().GoToUrl(Extensions.BaseURL);
 
                 //check that page is the right page
                 driver.FindElement(By.Id("Page-Done"));
@@ -260,7 +219,7 @@ namespace KensUITests
                 driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(Extensions.MaxWaitTime);
 
                 //navigate to the kenworth page
-                driver.Navigate().GoToUrl(Extensions.Homepage);
+                driver.Navigate().GoToUrl(Extensions.BaseURL);
 
                 //check that page is the right page
                 driver.FindElement(By.Id("Page-Done"));
