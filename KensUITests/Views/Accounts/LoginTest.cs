@@ -12,8 +12,14 @@ namespace KensUITests.Views.Accounts
         private string _Controller = "Account";
         private string _Action = "Login";
 
+        [TestInitialize]
+        public void Initialize()
+        {
+
+        }
+
         [TestMethod]
-        public void Login_Valid_CorrectLogin_Should_JumpToHomepage()
+        public void Login_Valid_AdminLogin_Should_JumpToHomepage()
         {
 
             //!Make sure to add the path to where you extracting the chromedriver.exe:
@@ -42,6 +48,41 @@ namespace KensUITests.Views.Accounts
                 //check that page is the right page
                 //i dunno know what id's to look for, i cannot navigate to the page that naturally comes after a log in
                 ValidatePageTransition(driver, "Home", "Index");
+
+            }
+
+        }
+
+
+        [TestMethod]
+        public void Login_Valid_NonAdminLogin_Should_JumpToHomepage()
+        {
+            //!Make sure to add the path to where you extracting the chromedriver.exe:
+            using (IWebDriver driver = new ChromeDriver(Extensions.ChromeDriverLocation))//<-Add your path
+            {
+                //set an implicit wait time before any search for an item fails
+                driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(Extensions.MaxWaitTime);
+
+                NavigateToPage(driver, _Controller, _Action);
+
+
+                //find the email box to input username info
+                IWebElement emailBox = driver.FindElement(By.Id("Email"));
+
+                //enter a valid email to login
+                emailBox.SendKeys(Extensions.ValidEmailNotAdmin1);
+
+                //find the password box to input password info    
+                IWebElement passwordBox = driver.FindElement(By.Id("Password"));
+
+                //enter a valid password
+                passwordBox.SendKeys(Extensions.ValidPasswordNotAdmin1);
+
+                //submit
+                driver.FindElement(By.Name("LogInSubmit")).Click();
+
+                //check that page is the right page
+                //i dunno know what id's to look for, i cannot navigate to the page that naturally comes after a log in
 
             }
 
