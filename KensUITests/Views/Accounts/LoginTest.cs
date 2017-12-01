@@ -13,7 +13,7 @@ namespace KensUITests.Views.Accounts
         private string _Action = "Login";
 
         [TestMethod]
-        public void ValidLogInAdmin()
+        public void Login_Valid_CorrectLogin_Should_JumpToHomepage()
         {
 
             //!Make sure to add the path to where you extracting the chromedriver.exe:
