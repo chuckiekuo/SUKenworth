@@ -56,5 +56,10 @@ namespace SUKenworth.Controllers
 
             return View("Error", error);
         }
+
+        public ActionResult Index()
+        {
+            return View();
+        }
     }
 }

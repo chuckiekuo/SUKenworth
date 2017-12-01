@@ -396,6 +396,7 @@
     <Content Include="SUKenworth.ruleset" />
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Home\Error.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
