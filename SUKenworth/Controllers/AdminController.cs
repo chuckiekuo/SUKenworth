@@ -29,9 +29,10 @@ namespace SUKenworth.Controllers
         }
 
 
-        // GET: Admin
+        // GET: Admin      
         public ActionResult Index(string id = null)
         {
+            // Catch exception here and redirected to Error view
             if (id == null)
             {
                 return RedirectToAction("Error");
