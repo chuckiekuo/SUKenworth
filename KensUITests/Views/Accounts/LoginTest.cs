@@ -48,7 +48,6 @@ namespace KensUITests.Views.Accounts
                 driver.FindElement(By.Id("LogInSubmit")).Click();
 
                 //check that page is the right page
-                //i dunno know what id's to look for, i cannot navigate to the page that naturally comes after a log in
                 ValidatePageTransition(driver, "Home", "Index");
 
             }
@@ -67,7 +66,6 @@ namespace KensUITests.Views.Accounts
 
                 NavigateToPage(driver, _Controller, _Action);
 
-
                 //find the email box to input username info
                 IWebElement emailBox = driver.FindElement(By.Id("Email"));
 
@@ -84,8 +82,7 @@ namespace KensUITests.Views.Accounts
                 driver.FindElement(By.Id("LogInSubmit")).Click();
 
                 //check that page is the right page
-                //i dunno know what id's to look for, i cannot navigate to the page that naturally comes after a log in
-                
+                ValidatePageTransition(driver, "Home", "Index");
             }
 
         }
