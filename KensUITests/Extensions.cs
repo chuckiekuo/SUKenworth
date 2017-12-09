@@ -113,24 +113,24 @@ namespace KensUITests
             }
         }
 
-        public static bool ValidatePageTransition(IWebDriver driver, string Controller, string Action, string Data = null)
+        public static bool ValidatePageTransition(IWebDriver driver, string controller, string action, string data = null)
         {
                 driver.FindElement(By.Id("Page-Done"));
                 driver.FindElement(By.Id("Area--Done"));
-                driver.FindElement(By.Id("Controller-"+Controller+"-Done"));
-                driver.FindElement(By.Id("View-"+Action+"-Done"));
+                driver.FindElement(By.Id("Controller-"+controller+"-Done"));
+                driver.FindElement(By.Id("View-"+action+"-Done"));
 
             return true;
         }
 
-        public static bool NavigateToPage(IWebDriver driver, string Controller, string Action, string Data = null)
+        public static bool NavigateToPage(IWebDriver driver, string controller, string action, string data = null)
         {
 
             //navigate to the kenworth page
-            driver.Navigate().GoToUrl(Extensions.BaseUrl+"/"+Controller+"/"+Action+"/"+Data);
+            driver.Navigate().GoToUrl(Extensions.BaseUrl+"/"+controller+"/"+action+"/"+data);
             
             //check that page is the right page
-            ValidatePageTransition(driver, Controller, Action);
+            ValidatePageTransition(driver, controller, action);
 
             return true;
         }
