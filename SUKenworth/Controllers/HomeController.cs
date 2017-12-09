@@ -51,7 +51,7 @@ namespace SUKenworth.Controllers
 
             var error = new Models.ErrorModel
             {
-                mErrorCode = errorCode
+                MErrorCode = errorCode
             };
 
             return View("Error", error);

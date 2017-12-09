@@ -9,7 +9,7 @@ namespace SUKenworth.Models
     public partial class ErrorModel
     {
         //index(key) to the particular error message
-        public int mErrorCode { get; set; }
+        public int MErrorCode { get; set; }
 
         List<string> errors = new List<string>(new string[]
         {
