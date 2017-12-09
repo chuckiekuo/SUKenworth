@@ -14,7 +14,7 @@ namespace KensUITests
         //IMPORTANT:::be sure these file locations are correct for your machine
         //always be sure the website is running before attempting to test
         //URL of the homepage
-        public const string BaseURL = "http://localhost:50298/";
+        public const string BaseUrl = "http://localhost:50298/";
 
         //file location of the chrome driver
         //public const string ChromeDriverLocation = "C:/Users/oslandt/Desktop/KenworthTeamsCommonProject/SUKenworth/KensUITests";
@@ -127,7 +127,7 @@ namespace KensUITests
         {
 
             //navigate to the kenworth page
-            driver.Navigate().GoToUrl(Extensions.BaseURL+"/"+Controller+"/"+Action+"/"+Data);
+            driver.Navigate().GoToUrl(Extensions.BaseUrl+"/"+Controller+"/"+Action+"/"+Data);
             
             //check that page is the right page
             ValidatePageTransition(driver, Controller, Action);

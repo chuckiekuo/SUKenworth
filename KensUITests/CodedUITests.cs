@@ -43,7 +43,7 @@ namespace KensUITests
                 driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(Extensions.MaxWaitTime);
 
                 //navigate to the kenworth page
-                driver.Navigate().GoToUrl(Extensions.BaseURL);
+                driver.Navigate().GoToUrl(Extensions.BaseUrl);
 
                 //check that page is the right page
                 ValidatePageTransition(driver, "Account", "Login");
@@ -81,7 +81,7 @@ namespace KensUITests
                 driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(Extensions.MaxWaitTime);
 
                 //navigate to the kenworth page
-                driver.Navigate().GoToUrl(Extensions.BaseURL);
+                driver.Navigate().GoToUrl(Extensions.BaseUrl);
 
                 //check that page is the right page
                 driver.FindElement(By.Id("Page-Done"));
@@ -166,7 +166,7 @@ namespace KensUITests
                 driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(Extensions.MaxWaitTime);
 
                 //navigate to the kenworth page
-                driver.Navigate().GoToUrl(Extensions.BaseURL);
+                driver.Navigate().GoToUrl(Extensions.BaseUrl);
 
                 //check that page is the right page
                 driver.FindElement(By.Id("Page-Done"));
@@ -219,7 +219,7 @@ namespace KensUITests
                 driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(Extensions.MaxWaitTime);
 
                 //navigate to the kenworth page
-                driver.Navigate().GoToUrl(Extensions.BaseURL);
+                driver.Navigate().GoToUrl(Extensions.BaseUrl);
 
                 //check that page is the right page
                 driver.FindElement(By.Id("Page-Done"));
