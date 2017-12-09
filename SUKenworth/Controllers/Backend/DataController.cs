@@ -49,21 +49,21 @@
                 // Linq query for formatting and reformatting one data-set
                 myQueries.SelectAll = "SELECT * FROM dbo.[User]";
                 myQueries.DeleteAll = "DELETE * FROM dbo.[User] ";
-                myQueries.SelectUser = "";
-                myQueries.CreateUser = "";//"INSER into dbo.[User] Values(\"\" + id + \",\" + username + \",\" + password + \",\" + admin + \"\")";
-                myQueries.DeleteUser = "";
-                myQueries.UpdateUser = "";
+                myQueries.SelectUser = String.Empty;
+                myQueries.CreateUser = String.Empty;//"INSER into dbo.[User] Values(\"\" + id + \",\" + username + \",\" + password + \",\" + admin + \"\")";
+                myQueries.DeleteUser = String.Empty;
+                myQueries.UpdateUser = String.Empty;
             }
             else
             {
                 connectionString = DataConfig.TestDatabase2;
                 //TO-DO Complete CRUDIS Query set
-                myQueries.SelectAll = "";
-                myQueries.DeleteAll = "";
-                myQueries.SelectUser = "";
-                myQueries.CreateUser = "";
-                myQueries.DeleteUser = "";
-                myQueries.UpdateUser = "";
+                myQueries.SelectAll = String.Empty;
+                myQueries.DeleteAll = String.Empty;
+                myQueries.SelectUser = String.Empty;
+                myQueries.CreateUser = String.Empty;
+                myQueries.DeleteUser = String.Empty;
+                myQueries.UpdateUser = String.Empty;
             }
             
             myConnection = new SqlConnection(connectionString);
