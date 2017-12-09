@@ -76,7 +76,7 @@ namespace KensUITests
 
 
                 //find the log out button and click it
-                driver.FindElement(By.Id("LogOffSubmit")).Click();
+                driver.FindElement(By.Id(Extensions.LogoutIdTag)).Click();
 
                 //check that page is the right page
                 //i don't know what id's to check log off link is broken
@@ -121,7 +121,7 @@ namespace KensUITests
                 //i don't know what i'ds to check for, link is broken
 
                 //find the log out button and click it
-                driver.FindElement(By.Id("LogOffSubmit")).Click();
+                driver.FindElement(By.Id(Extensions.LogoutIdTag)).Click();
 
                 //check that page is the right page
                 //link is broken
