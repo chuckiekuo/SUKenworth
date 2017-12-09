@@ -45,7 +45,7 @@ namespace KensUITests.Views.Accounts
                 passwordBox.SendKeys(Extensions.ValidPasswordAdmin1);
 
                 //submit
-                driver.FindElement(By.Id("LogInSubmit")).Click();
+                driver.FindElement(By.Id(Extensions.LoginSubmitButtonIdTag)).Click();
 
                 //check that page is the right page
                 ValidatePageTransition(driver, "Home", "Index");
@@ -79,7 +79,7 @@ namespace KensUITests.Views.Accounts
                 passwordBox.SendKeys(Extensions.ValidPasswordNotAdmin1);
 
                 //submit
-                driver.FindElement(By.Id("LogInSubmit")).Click();
+                driver.FindElement(By.Id(Extensions.LoginSubmitButtonIdTag)).Click();
 
                 //check that page is the right page
                 ValidatePageTransition(driver, "Home", "Index");

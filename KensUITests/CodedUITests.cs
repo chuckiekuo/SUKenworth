@@ -62,7 +62,7 @@ namespace KensUITests
                 passwordBox.SendKeys(Extensions.ValidPasswordAdmin1);
 
                 //submit
-                driver.FindElement(By.Id("LogInSubmit")).Click();
+                driver.FindElement(By.Id(Extensions.LoginSubmitButtonIdTag)).Click();
 
                 //set a wait for page to render
                 //var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(Extensions.MaxWaitTime));
@@ -115,7 +115,7 @@ namespace KensUITests
                 passwordBox.SendKeys(Extensions.ValidPasswordNotAdmin1);
 
                 //submit
-                driver.FindElement(By.Id("LogInSubmit")).Click();
+                driver.FindElement(By.Id(Extensions.LoginSubmitButtonIdTag)).Click();
 
                 //check that page is the right page
                 //i don't know what i'ds to check for, link is broken
