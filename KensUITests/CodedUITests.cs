@@ -62,7 +62,7 @@ namespace KensUITests
                 passwordBox.SendKeys(Extensions.ValidPasswordAdmin1);
 
                 //submit
-                driver.FindElement(By.Name("LogInSubmit")).Click();
+                driver.FindElement(By.Id("LogInSubmit")).Click();
 
                 //set a wait for page to render
                 //var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(Extensions.MaxWaitTime));
@@ -76,7 +76,7 @@ namespace KensUITests
 
 
                 //find the log out button and click it
-                driver.FindElement(By.Name("LogOffSubmit")).Click();
+                driver.FindElement(By.Id("LogOffSubmit")).Click();
 
                 //check that page is the right page
                 //i don't know what id's to check log off link is broken
@@ -115,13 +115,13 @@ namespace KensUITests
                 passwordBox.SendKeys(Extensions.ValidPasswordNotAdmin1);
 
                 //submit
-                driver.FindElement(By.Name("LogInSubmit")).Click();
+                driver.FindElement(By.Id("LogInSubmit")).Click();
 
                 //check that page is the right page
                 //i don't know what i'ds to check for, link is broken
 
                 //find the log out button and click it
-                driver.FindElement(By.Name("LogOffSubmit")).Click();
+                driver.FindElement(By.Id("LogOffSubmit")).Click();
 
                 //check that page is the right page
                 //link is broken

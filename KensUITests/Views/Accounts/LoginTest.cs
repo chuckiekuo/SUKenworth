@@ -45,7 +45,7 @@ namespace KensUITests.Views.Accounts
                 passwordBox.SendKeys(Extensions.ValidPasswordAdmin1);
 
                 //submit
-                driver.FindElement(By.Name("LogInSubmit")).Click();
+                driver.FindElement(By.Id("LogInSubmit")).Click();
 
                 //check that page is the right page
                 //i dunno know what id's to look for, i cannot navigate to the page that naturally comes after a log in
@@ -81,7 +81,7 @@ namespace KensUITests.Views.Accounts
                 passwordBox.SendKeys(Extensions.ValidPasswordNotAdmin1);
 
                 //submit
-                driver.FindElement(By.Name("LogInSubmit")).Click();
+                driver.FindElement(By.Id("LogInSubmit")).Click();
 
                 //check that page is the right page
                 //i dunno know what id's to look for, i cannot navigate to the page that naturally comes after a log in
