@@ -58,6 +58,9 @@ namespace KensUITests
         public const int MaxWaitTime = 20;
 
 
+        //id tags to search for
+        public const string LoginEmailInputBoxIdTag = "Email";
+
 
         //for fetching the current date and time in a format that can be stored as a file name
         public static string CurrentDateTimeFileStringFormat()

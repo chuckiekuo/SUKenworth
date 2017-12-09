@@ -50,7 +50,7 @@ namespace KensUITests
                 driver.FindElement(By.Id("View-Login-Done"));
 
                 //find the email box to input username info
-                IWebElement emailBox = driver.FindElement(By.Id("Email"));
+                IWebElement emailBox = driver.FindElement(By.Id(Extensions.LoginEmailInputBoxIdTag));
 
                 //enter a valid email to login
                 emailBox.SendKeys(Extensions.ValidEmailAdmin1);
@@ -103,7 +103,7 @@ namespace KensUITests
                 driver.FindElement(By.Id("View-Login-Done"));
 
                 //find the email box to input username info
-                IWebElement emailBox = driver.FindElement(By.Id("Email"));
+                IWebElement emailBox = driver.FindElement(By.Id(Extensions.LoginEmailInputBoxIdTag));
 
                 //enter a valid email to login
                 emailBox.SendKeys(Extensions.ValidEmailNotAdmin1);
