@@ -60,6 +60,8 @@ namespace KensUITests
 
         //id tags to search for
         public const string LoginEmailInputBoxIdTag = "Email";
+        public const string LoginPasswordInputBoxIdTag = "Password";
+
 
 
         //for fetching the current date and time in a format that can be stored as a file name

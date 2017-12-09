@@ -56,7 +56,7 @@ namespace KensUITests
                 emailBox.SendKeys(Extensions.ValidEmailAdmin1);
 
                 //find the password box to input password info    
-                IWebElement passwordBox = driver.FindElement(By.Id("Password"));
+                IWebElement passwordBox = driver.FindElement(By.Id(Extensions.LoginPasswordInputBoxIdTag));
 
                 //enter a valid password
                 passwordBox.SendKeys(Extensions.ValidPasswordAdmin1);
@@ -109,7 +109,7 @@ namespace KensUITests
                 emailBox.SendKeys(Extensions.ValidEmailNotAdmin1);
 
                 //find the password box to input password info    
-                IWebElement passwordBox = driver.FindElement(By.Id("Password"));
+                IWebElement passwordBox = driver.FindElement(By.Id(Extensions.LoginPasswordInputBoxIdTag));
 
                 //enter a valid password
                 passwordBox.SendKeys(Extensions.ValidPasswordNotAdmin1);
