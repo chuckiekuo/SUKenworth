@@ -201,20 +201,6 @@ namespace KensUITests.Views.Accounts
             ValidatePageTransition(LoginAssemblyTests.CurrentDriver, "Home", "Index");
         }
 
-        //add happy path tests for
-        // clicking any and all links - logged in or not - from every page
-        //   toggling admin privleges
-        // register a user
-        //  needs a test db that can be wiped for that
-        // naviagating site without logging in 
-        //
-        //add bad paths for
-        // log in
-        // toggle admin privleges
-        // database inputs
-        // naviagting site without logging in
-        //
-
         //INCOMPLETE
         [TestMethod]
         public void Login_Valid_RememberMeFunctionality_Should_Remember()
@@ -242,5 +228,19 @@ namespace KensUITests.Views.Accounts
             //now confirm remember me worked
             //BUT WHAT DOES IT DO IN THIS CASE YOU SEXY SLOOT?
         }
+
+        //add happy path tests for
+        // clicking any and all links - logged in or not - from every page
+        //   toggling admin privleges
+        // register a user
+        //  needs a test db that can be wiped for that
+        // naviagating site without logging in 
+        //
+        //add bad paths for
+        // log in
+        // toggle admin privleges
+        // database inputs
+        // naviagting site without logging in
+        //
     }
 }
