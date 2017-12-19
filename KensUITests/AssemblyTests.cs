@@ -10,7 +10,7 @@ namespace KensUITests
     [TestClass]
     public class AssemblyTests
     {
-        public static IWebDriver CurrentDriver = new ChromeDriver();
+        public static IWebDriver CurrentDriver = new ChromeDriver(Extensions.ChromeDriverLocation);
 
         public static ChromeOptions Options = new ChromeOptions();
 
@@ -28,7 +28,7 @@ namespace KensUITests
             //shoulld be passing in the driver as a parameter
             //this means that the current tests must be rewritten to allow parameters
             //this would allow future tests to not haave to have code in them that repeats the login processes, just call this assembly function
-
+            
         }
 
         [AssemblyCleanup]
