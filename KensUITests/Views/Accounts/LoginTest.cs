@@ -215,6 +215,32 @@ namespace KensUITests.Views.Accounts
         // naviagting site without logging in
         //
 
-        //add tests for remeber me functionality
+        //INCOMPLETE
+        [TestMethod]
+        public void Login_Valid_RememberMeFunctionality_Should_Remember()
+        {
+            NavigateToPage(LoginAssemblyTests.CurrentDriver, _Controller, _Action);
+
+            //find the email box to input username info
+            IWebElement emailBox = LoginAssemblyTests.CurrentDriver.FindElement(By.Id(Extensions.LoginEmailInputBoxIdTag));
+
+            //enter a valid email to login
+            emailBox.SendKeys(Extensions.ValidEmailAdmin1);
+
+            //find the password box to input password info  
+            IWebElement passwordBox = LoginAssemblyTests.CurrentDriver.FindElement(By.Id(Extensions.LoginPasswordInputBoxIdTag));
+
+            //enter a valid password
+            passwordBox.SendKeys(Extensions.ValidPasswordAdmin1);
+
+            //click remember me button
+            LoginAssemblyTests.CurrentDriver.FindElement(By.Id("RememberMe")).Click();
+
+            //submit login info
+            LoginAssemblyTests.CurrentDriver.FindElement(By.Id(Extensions.LoginSubmitButtonIdTag)).Click();
+
+            //now confirm remember me worked
+            //BUT WHAT DOES IT DO IN THIS CASE YOU SEXY SLOOT?
+        }
     }
 }
