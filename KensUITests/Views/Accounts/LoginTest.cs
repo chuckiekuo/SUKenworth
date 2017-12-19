@@ -23,50 +23,50 @@ namespace KensUITests.Views.Accounts
         [TestMethod]
         public void Login_Valid_AdminLogin_Should_JumpToHomepage()
         {
-            NavigateToPage(AssemblyTests.CurrentDriver, _Controller, _Action);
+            NavigateToPage(LoginAssemblyTests.CurrentDriver, _Controller, _Action);
 
             //find the email box to input username info
-            IWebElement emailBox = AssemblyTests.CurrentDriver.FindElement(By.Id(Extensions.LoginEmailInputBoxIdTag));
+            IWebElement emailBox = LoginAssemblyTests.CurrentDriver.FindElement(By.Id(Extensions.LoginEmailInputBoxIdTag));
 
             //enter a valid email to login
             emailBox.SendKeys(Extensions.ValidEmailAdmin1);
 
             //find the password box to input password info  
-            IWebElement passwordBox = AssemblyTests.CurrentDriver.FindElement(By.Id(Extensions.LoginPasswordInputBoxIdTag));
+            IWebElement passwordBox = LoginAssemblyTests.CurrentDriver.FindElement(By.Id(Extensions.LoginPasswordInputBoxIdTag));
 
             //enter a valid password
             passwordBox.SendKeys(Extensions.ValidPasswordAdmin1);
 
             //submit
-            AssemblyTests.CurrentDriver.FindElement(By.Id(Extensions.LoginSubmitButtonIdTag)).Click();
+            LoginAssemblyTests.CurrentDriver.FindElement(By.Id(Extensions.LoginSubmitButtonIdTag)).Click();
 
             //check that page is the right page
-            ValidatePageTransition(AssemblyTests.CurrentDriver, "Home", "Index");
+            ValidatePageTransition(LoginAssemblyTests.CurrentDriver, "Home", "Index");
         }
 
 
         [TestMethod]
         public void Login_Valid_NonAdminLogin_Should_JumpToHomepage()
         {
-            NavigateToPage(AssemblyTests.CurrentDriver, _Controller, _Action);
+            NavigateToPage(LoginAssemblyTests.CurrentDriver, _Controller, _Action);
 
             //find the email box to input username info
-            IWebElement emailBox = AssemblyTests.CurrentDriver.FindElement(By.Id(Extensions.LoginEmailInputBoxIdTag));
+            IWebElement emailBox = LoginAssemblyTests.CurrentDriver.FindElement(By.Id(Extensions.LoginEmailInputBoxIdTag));
 
             //enter a valid email to login
             emailBox.SendKeys(Extensions.ValidEmailNotAdmin1);
 
             //find the password box to input password info    
-            IWebElement passwordBox = AssemblyTests.CurrentDriver.FindElement(By.Id(Extensions.LoginPasswordInputBoxIdTag));
+            IWebElement passwordBox = LoginAssemblyTests.CurrentDriver.FindElement(By.Id(Extensions.LoginPasswordInputBoxIdTag));
 
             //enter a valid password
             passwordBox.SendKeys(Extensions.ValidPasswordNotAdmin1);
 
             //submit
-            AssemblyTests.CurrentDriver.FindElement(By.Id(Extensions.LoginSubmitButtonIdTag)).Click();
+            LoginAssemblyTests.CurrentDriver.FindElement(By.Id(Extensions.LoginSubmitButtonIdTag)).Click();
 
             //check that page is the right page
-            ValidatePageTransition(AssemblyTests.CurrentDriver, "Home", "Index");
+            ValidatePageTransition(LoginAssemblyTests.CurrentDriver, "Home", "Index");
             
 
         }
