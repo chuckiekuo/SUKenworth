@@ -126,7 +126,7 @@ namespace KensUITests.Views.Accounts
         [TestMethod]
         public void NoLogin_Valid_Should_VisitAllAllowedPages()
         {
-            //navigate to the kenworth page
+            //navigate to the kenworth page, this function has validation built into it
             NavigateToPage(LoginAssemblyTests.CurrentDriver, _Controller, _Action);
 
             //click register, should take you to register page
@@ -139,6 +139,9 @@ namespace KensUITests.Views.Accounts
             //click log in, should take you to the log in page again
             LoginAssemblyTests.CurrentDriver.FindElement(By.Id("loginLink")).Click();
 
+            //manually validate (because we are clicking link and not entering urls)
+            ValidatePageTransition(LoginAssemblyTests.CurrentDriver, _Controller, _Action);
+
             //click register as a new user link on login page
             LoginAssemblyTests.CurrentDriver.FindElement(By.Id("registerLinkOnPage")).Click();
 
@@ -148,6 +151,9 @@ namespace KensUITests.Views.Accounts
 
             //click log in, should take you to the log in page again
             LoginAssemblyTests.CurrentDriver.FindElement(By.Id("loginLink")).Click();
+
+            //manually validate
+            ValidatePageTransition(LoginAssemblyTests.CurrentDriver, _Controller, _Action);
 
             //click contact, should take you to contact page
             LoginAssemblyTests.CurrentDriver.FindElement(By.Id("contactLinkNavBar")).Click();
@@ -159,6 +165,9 @@ namespace KensUITests.Views.Accounts
             //click log in, should take you to the log in page again
             LoginAssemblyTests.CurrentDriver.FindElement(By.Id("loginLink")).Click();
 
+            //manually validate
+            ValidatePageTransition(LoginAssemblyTests.CurrentDriver, _Controller, _Action);
+
             //click about, should take you to about page
             LoginAssemblyTests.CurrentDriver.FindElement(By.Id("aboutLinkNavBar")).Click();
 
@@ -168,6 +177,9 @@ namespace KensUITests.Views.Accounts
 
             //click log in, should take you to the log in page again
             LoginAssemblyTests.CurrentDriver.FindElement(By.Id("loginLink")).Click();
+
+            //manually validate
+            ValidatePageTransition(LoginAssemblyTests.CurrentDriver, _Controller, _Action);
 
             //click SetDatabase, should take you to the set database page
             LoginAssemblyTests.CurrentDriver.FindElement(By.Id("setDatabaseNavBar")).Click();
@@ -179,12 +191,14 @@ namespace KensUITests.Views.Accounts
             //click log in, should take you to the log in page again
             LoginAssemblyTests.CurrentDriver.FindElement(By.Id("loginLink")).Click();
 
+            //manually validate
+            ValidatePageTransition(LoginAssemblyTests.CurrentDriver, _Controller, _Action);
+
             //click homescreen logo in top left, should take you to homepage
             LoginAssemblyTests.CurrentDriver.FindElement(By.Id("homeLinkNavBar")).Click();
             
             //check that page is the right page
             ValidatePageTransition(LoginAssemblyTests.CurrentDriver, "Home", "Index");
-        
         }
 
         //add happy path tests for
