@@ -26,12 +26,6 @@ namespace KensUITests
         }
 
         [TestMethod]
-        public void CodedUITestMethod1()
-        {
-            // To generate code for this test, select "Generate Code for Coded UI Test" from the shortcut menu and select one of the menu items.
-        }
-
-        [TestMethod]
         public void ValidLogInAndLogOffAdmin()
         {
             //!Make sure to add the path to where you extracting the chromedriver.exe:
