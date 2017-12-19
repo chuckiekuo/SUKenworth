@@ -28,7 +28,10 @@ namespace KensUITests
             //shoulld be passing in the driver as a parameter
             //this means that the current tests must be rewritten to allow parameters
             //this would allow future tests to not haave to have code in them that repeats the login processes, just call this assembly function
-            
+
+            //set implicit wait for driver
+            CurrentDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(Extensions.MaxWaitTime);
+
         }
 
         [AssemblyCleanup]
