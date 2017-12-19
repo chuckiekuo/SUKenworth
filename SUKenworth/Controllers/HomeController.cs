@@ -46,9 +46,12 @@ namespace SUKenworth.Controllers
             return View();
         }
 
+
+        // Takes in errorCode and returns custom Error page
         public ActionResult Error(int errorCode = 0)
         {
 
+            // instantiates new error object embedded with custom error code
             var error = new Models.ErrorModel
             {
                 MErrorCode = errorCode
