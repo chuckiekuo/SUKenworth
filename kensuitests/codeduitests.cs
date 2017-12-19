@@ -25,8 +25,6 @@ namespace KensUITests
         {
         }
 
-       
-
         [TestMethod]
         public void NoLogin_Valid_Should_VisitAllAllowedPages()
         {
