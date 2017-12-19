@@ -23,25 +23,25 @@ namespace KensUITests.Views.Accounts
         [TestMethod]
         public void Login_Valid_AdminLogin_Should_JumpToHomepage()
         {
-                 NavigateToPage(AssemblyTests.CurrentDriver, _Controller, _Action);
+            NavigateToPage(AssemblyTests.CurrentDriver, _Controller, _Action);
 
-                //find the email box to input username info
-                IWebElement emailBox = AssemblyTests.CurrentDriver.FindElement(By.Id(Extensions.LoginEmailInputBoxIdTag));
+            //find the email box to input username info
+            IWebElement emailBox = AssemblyTests.CurrentDriver.FindElement(By.Id(Extensions.LoginEmailInputBoxIdTag));
 
-                //enter a valid email to login
-                emailBox.SendKeys(Extensions.ValidEmailAdmin1);
+            //enter a valid email to login
+            emailBox.SendKeys(Extensions.ValidEmailAdmin1);
 
-                //find the password box to input password info    
-                IWebElement passwordBox = AssemblyTests.CurrentDriver.FindElement(By.Id(Extensions.LoginPasswordInputBoxIdTag));
+            //find the password box to input password info  
+            IWebElement passwordBox = AssemblyTests.CurrentDriver.FindElement(By.Id(Extensions.LoginPasswordInputBoxIdTag));
 
-                //enter a valid password
-                passwordBox.SendKeys(Extensions.ValidPasswordAdmin1);
+            //enter a valid password
+            passwordBox.SendKeys(Extensions.ValidPasswordAdmin1);
 
             //submit
             AssemblyTests.CurrentDriver.FindElement(By.Id(Extensions.LoginSubmitButtonIdTag)).Click();
 
-                //check that page is the right page
-                ValidatePageTransition(AssemblyTests.CurrentDriver, "Home", "Index");
+            //check that page is the right page
+            ValidatePageTransition(AssemblyTests.CurrentDriver, "Home", "Index");
         }
 
 
