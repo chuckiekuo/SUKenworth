@@ -140,5 +140,10 @@ namespace KensUITests
 
             return true;
         }
+
+        public static void LogOut(IWebDriver currentDriver)
+        {
+            currentDriver.FindElement(By.Id(LogoutIdTag)).Click(); // Click logout button
+        }
     }
 }
