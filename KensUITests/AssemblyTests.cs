@@ -36,6 +36,7 @@ namespace KensUITests
         {
             //should have a logout method here so the current driver will log out
             //finally, quit the current driver
+            CurrentDriver.Quit();
         }
     }
 }
