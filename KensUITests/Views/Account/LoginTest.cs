@@ -4,7 +4,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using static KensUITests.Extensions;
 
-namespace KensUITests.Views.Accounts
+namespace KensUITests.Views.Account
 {
     [TestClass]
     public class LoginTest
