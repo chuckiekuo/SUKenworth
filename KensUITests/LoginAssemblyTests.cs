@@ -14,7 +14,7 @@ namespace KensUITests
 
         public static ChromeOptions Options = new ChromeOptions();
 
-        public static string LocalUrl = "http://localhost:50298/";
+        public static string LocalUrl = Extensions.BaseUrl;
         //public static string LiveUrl = "";
         //public static string UrlPrefix = LocalUrl;
 
