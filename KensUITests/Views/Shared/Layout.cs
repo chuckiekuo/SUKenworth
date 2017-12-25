@@ -69,5 +69,106 @@ namespace KensUITests.Views.Shared
             //check that page is the right page
             ValidatePageTransition(AssemblyTests.CurrentDriver, "Home", "Index");
         }
+
+        //INCOMPLETE
+        public static void ClickNavBarLinksNotAdmin(IWebDriver currentDriver, string controller, string action)
+        {
+            //the log off link
+
+
+            //the "Hello XXXX!" link
+
+
+            //navigate to the original page, this function has validation built into it
+            NavigateToPage(AssemblyTests.CurrentDriver, controller, action);
+
+            //click contact, should take you to contact page
+            AssemblyTests.CurrentDriver.FindElement(By.Id("contactLinkNavBar")).Click();
+
+            //check that page is the right page (Should be contact page)
+            ValidatePageTransition(AssemblyTests.CurrentDriver, "Home", "Contact");
+
+
+            //navigate to the original page, this function has validation built into it
+            NavigateToPage(AssemblyTests.CurrentDriver, controller, action);
+
+            //click about, should take you to about page
+            AssemblyTests.CurrentDriver.FindElement(By.Id("aboutLinkNavBar")).Click();
+
+            //check that page is the right page (Should be the about page)
+            ValidatePageTransition(AssemblyTests.CurrentDriver, "Home", "About");
+
+
+            //navigate to the original page, this function has validation built into it
+            NavigateToPage(AssemblyTests.CurrentDriver, controller, action);
+
+            //click SetDatabase, should take you to the set database page
+            AssemblyTests.CurrentDriver.FindElement(By.Id("setDatabaseNavBar")).Click();
+
+            //check that page is the right page (Should be setDatabase page)
+            ValidatePageTransition(AssemblyTests.CurrentDriver, "Home", "SetDatabase");
+
+
+            //navigate to the original page, this function has validation built into it
+            NavigateToPage(AssemblyTests.CurrentDriver, controller, action);
+
+            //click homescreen logo in top left, should take you to homepage
+            AssemblyTests.CurrentDriver.FindElement(By.Id("homeLinkNavBar")).Click();
+
+            //check that page is the right page
+            ValidatePageTransition(AssemblyTests.CurrentDriver, "Home", "Index");
+        }
+
+        //INCOMPLETE
+        public static void ClickNavBarLinksAdmin(IWebDriver currentDriver, string controller, string action)
+        {
+            //the log off link
+
+
+            //the admin link
+
+
+            //the "Hello XXXX!" link
+
+
+            //navigate to the original page, this function has validation built into it
+            NavigateToPage(AssemblyTests.CurrentDriver, controller, action);
+
+            //click contact, should take you to contact page
+            AssemblyTests.CurrentDriver.FindElement(By.Id("contactLinkNavBar")).Click();
+
+            //check that page is the right page (Should be contact page)
+            ValidatePageTransition(AssemblyTests.CurrentDriver, "Home", "Contact");
+
+
+            //navigate to the original page, this function has validation built into it
+            NavigateToPage(AssemblyTests.CurrentDriver, controller, action);
+
+            //click about, should take you to about page
+            AssemblyTests.CurrentDriver.FindElement(By.Id("aboutLinkNavBar")).Click();
+
+            //check that page is the right page (Should be the about page)
+            ValidatePageTransition(AssemblyTests.CurrentDriver, "Home", "About");
+
+
+            //navigate to the original page, this function has validation built into it
+            NavigateToPage(AssemblyTests.CurrentDriver, controller, action);
+
+            //click SetDatabase, should take you to the set database page
+            AssemblyTests.CurrentDriver.FindElement(By.Id("setDatabaseNavBar")).Click();
+
+            //check that page is the right page (Should be setDatabase page)
+            ValidatePageTransition(AssemblyTests.CurrentDriver, "Home", "SetDatabase");
+
+
+            //navigate to the original page, this function has validation built into it
+            NavigateToPage(AssemblyTests.CurrentDriver, controller, action);
+
+            //click homescreen logo in top left, should take you to homepage
+            AssemblyTests.CurrentDriver.FindElement(By.Id("homeLinkNavBar")).Click();
+
+            //check that page is the right page
+            ValidatePageTransition(AssemblyTests.CurrentDriver, "Home", "Index");
+        }
     }
 }
