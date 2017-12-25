@@ -50,6 +50,7 @@ namespace KensUITests.Views.Shared
             //check that page is the right page (manage index page)
             ValidatePageTransition(currentDriver, "Manage", "Index");
 
+
             //log off link
 
 
@@ -78,6 +79,7 @@ namespace KensUITests.Views.Shared
 
             //check that page is the right page (should be register page)
             ValidatePageTransition(currentDriver, "Account", "Register");
+
 
             //test other nav bar links
             Layout.ClickNavBarLinks(currentDriver, controller, action);
