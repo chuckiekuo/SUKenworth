@@ -23,49 +23,49 @@ namespace KensUITests.Views.Account
         [TestMethod]
         public void Login_Valid_AdminLogin_Should_JumpToHomepage()
         {
-            NavigateToPage(LoginAssemblyTests.CurrentDriver, _Controller, _Action);
+            NavigateToPage(AssemblyTests.CurrentDriver, _Controller, _Action);
 
-            LogIn(LoginAssemblyTests.CurrentDriver, Extensions.ValidEmailAdmin1, Extensions.ValidPasswordAdmin1);
+            LogIn(AssemblyTests.CurrentDriver, Extensions.ValidEmailAdmin1, Extensions.ValidPasswordAdmin1);
 
             //check that page is the right page
-            ValidatePageTransition(LoginAssemblyTests.CurrentDriver, "Home", "Index");
+            ValidatePageTransition(AssemblyTests.CurrentDriver, "Home", "Index");
         }
 
         [TestMethod]
         public void Login_Valid_NonAdminLogin_Should_JumpToHomepage()
         {
-            NavigateToPage(LoginAssemblyTests.CurrentDriver, _Controller, _Action);
+            NavigateToPage(AssemblyTests.CurrentDriver, _Controller, _Action);
 
-            LogIn(LoginAssemblyTests.CurrentDriver, Extensions.ValidEmailNotAdmin1, Extensions.ValidPasswordNotAdmin1);
+            LogIn(AssemblyTests.CurrentDriver, Extensions.ValidEmailNotAdmin1, Extensions.ValidPasswordNotAdmin1);
 
             //check that page is the right page
-            ValidatePageTransition(LoginAssemblyTests.CurrentDriver, "Home", "Index");
+            ValidatePageTransition(AssemblyTests.CurrentDriver, "Home", "Index");
         }
 
         [TestMethod]
         public void LoginAndLogout_Valid_AdminLogin_Should_JumpToHomePage()
         {
-            NavigateToPage(LoginAssemblyTests.CurrentDriver, _Controller, _Action);
+            NavigateToPage(AssemblyTests.CurrentDriver, _Controller, _Action);
 
-            LogIn(LoginAssemblyTests.CurrentDriver, Extensions.ValidEmailAdmin1, Extensions.ValidPasswordAdmin1);
+            LogIn(AssemblyTests.CurrentDriver, Extensions.ValidEmailAdmin1, Extensions.ValidPasswordAdmin1);
 
-            LogOut(LoginAssemblyTests.CurrentDriver);
+            LogOut(AssemblyTests.CurrentDriver);
 
             //check that page is the right one
-            ValidatePageTransition(LoginAssemblyTests.CurrentDriver, "Home", "Index");
+            ValidatePageTransition(AssemblyTests.CurrentDriver, "Home", "Index");
         }
 
         [TestMethod]
         public void LoginAndLogout_Valid_NonAdminLogin_Should_JumpToHomePage()
         {
-            NavigateToPage(LoginAssemblyTests.CurrentDriver, _Controller, _Action);
+            NavigateToPage(AssemblyTests.CurrentDriver, _Controller, _Action);
 
-            LogIn(LoginAssemblyTests.CurrentDriver, Extensions.ValidEmailNotAdmin1, Extensions.ValidPasswordNotAdmin1);
+            LogIn(AssemblyTests.CurrentDriver, Extensions.ValidEmailNotAdmin1, Extensions.ValidPasswordNotAdmin1);
 
-            LogOut(LoginAssemblyTests.CurrentDriver);
+            LogOut(AssemblyTests.CurrentDriver);
 
             //check that page is the right one
-            ValidatePageTransition(LoginAssemblyTests.CurrentDriver, "Home", "Index");
+            ValidatePageTransition(AssemblyTests.CurrentDriver, "Home", "Index");
         }
 
 
@@ -73,103 +73,103 @@ namespace KensUITests.Views.Account
         public void NoLogin_Valid_Should_VisitAllAllowedPages()
         {
             //navigate to the kenworth page, this function has validation built into it
-            NavigateToPage(LoginAssemblyTests.CurrentDriver, _Controller, _Action);
+            NavigateToPage(AssemblyTests.CurrentDriver, _Controller, _Action);
 
             //click register, should take you to register page
-            LoginAssemblyTests.CurrentDriver.FindElement(By.Id("registerLink")).Click();
+            AssemblyTests.CurrentDriver.FindElement(By.Id("registerLink")).Click();
 
             //check that page is the right page (should be register page)
-            ValidatePageTransition(LoginAssemblyTests.CurrentDriver, "Account", "Register");
+            ValidatePageTransition(AssemblyTests.CurrentDriver, "Account", "Register");
 
 
             //click log in, should take you to the log in page again
-            LoginAssemblyTests.CurrentDriver.FindElement(By.Id("loginLink")).Click();
+            AssemblyTests.CurrentDriver.FindElement(By.Id("loginLink")).Click();
 
             //manually validate (because we are clicking link and not entering urls)
-            ValidatePageTransition(LoginAssemblyTests.CurrentDriver, _Controller, _Action);
+            ValidatePageTransition(AssemblyTests.CurrentDriver, _Controller, _Action);
 
             //click register as a new user link on login page
-            LoginAssemblyTests.CurrentDriver.FindElement(By.Id("registerLinkOnPage")).Click();
+            AssemblyTests.CurrentDriver.FindElement(By.Id("registerLinkOnPage")).Click();
 
             //check that page is the right page (should be register page)
-            ValidatePageTransition(LoginAssemblyTests.CurrentDriver, "Account", "Register");
+            ValidatePageTransition(AssemblyTests.CurrentDriver, "Account", "Register");
 
 
             //click log in, should take you to the log in page again
-            LoginAssemblyTests.CurrentDriver.FindElement(By.Id("loginLink")).Click();
+            AssemblyTests.CurrentDriver.FindElement(By.Id("loginLink")).Click();
 
             //manually validate
-            ValidatePageTransition(LoginAssemblyTests.CurrentDriver, _Controller, _Action);
+            ValidatePageTransition(AssemblyTests.CurrentDriver, _Controller, _Action);
 
             //click contact, should take you to contact page
-            LoginAssemblyTests.CurrentDriver.FindElement(By.Id("contactLinkNavBar")).Click();
+            AssemblyTests.CurrentDriver.FindElement(By.Id("contactLinkNavBar")).Click();
 
             //check that page is the right page (Should be contact page)
-            ValidatePageTransition(LoginAssemblyTests.CurrentDriver, "Home", "Contact");
+            ValidatePageTransition(AssemblyTests.CurrentDriver, "Home", "Contact");
 
 
             //click log in, should take you to the log in page again
-            LoginAssemblyTests.CurrentDriver.FindElement(By.Id("loginLink")).Click();
+            AssemblyTests.CurrentDriver.FindElement(By.Id("loginLink")).Click();
 
             //manually validate
-            ValidatePageTransition(LoginAssemblyTests.CurrentDriver, _Controller, _Action);
+            ValidatePageTransition(AssemblyTests.CurrentDriver, _Controller, _Action);
 
             //click about, should take you to about page
-            LoginAssemblyTests.CurrentDriver.FindElement(By.Id("aboutLinkNavBar")).Click();
+            AssemblyTests.CurrentDriver.FindElement(By.Id("aboutLinkNavBar")).Click();
 
             //check that page is the right page (Should be the about page)
-            ValidatePageTransition(LoginAssemblyTests.CurrentDriver, "Home", "About");
+            ValidatePageTransition(AssemblyTests.CurrentDriver, "Home", "About");
 
 
             //click log in, should take you to the log in page again
-            LoginAssemblyTests.CurrentDriver.FindElement(By.Id("loginLink")).Click();
+            AssemblyTests.CurrentDriver.FindElement(By.Id("loginLink")).Click();
 
             //manually validate
-            ValidatePageTransition(LoginAssemblyTests.CurrentDriver, _Controller, _Action);
+            ValidatePageTransition(AssemblyTests.CurrentDriver, _Controller, _Action);
 
             //click SetDatabase, should take you to the set database page
-            LoginAssemblyTests.CurrentDriver.FindElement(By.Id("setDatabaseNavBar")).Click();
+            AssemblyTests.CurrentDriver.FindElement(By.Id("setDatabaseNavBar")).Click();
 
             //check that page is the right page (Should be setDatabase page)
-            ValidatePageTransition(LoginAssemblyTests.CurrentDriver, "Home", "SetDatabase");
+            ValidatePageTransition(AssemblyTests.CurrentDriver, "Home", "SetDatabase");
 
 
             //click log in, should take you to the log in page again
-            LoginAssemblyTests.CurrentDriver.FindElement(By.Id("loginLink")).Click();
+            AssemblyTests.CurrentDriver.FindElement(By.Id("loginLink")).Click();
 
             //manually validate
-            ValidatePageTransition(LoginAssemblyTests.CurrentDriver, _Controller, _Action);
+            ValidatePageTransition(AssemblyTests.CurrentDriver, _Controller, _Action);
 
             //click homescreen logo in top left, should take you to homepage
-            LoginAssemblyTests.CurrentDriver.FindElement(By.Id("homeLinkNavBar")).Click();
+            AssemblyTests.CurrentDriver.FindElement(By.Id("homeLinkNavBar")).Click();
             
             //check that page is the right page
-            ValidatePageTransition(LoginAssemblyTests.CurrentDriver, "Home", "Index");
+            ValidatePageTransition(AssemblyTests.CurrentDriver, "Home", "Index");
         }
 
         //INCOMPLETE
         [TestMethod]
         public void Login_Valid_RememberMeFunctionality_Should_Remember()
         {
-            NavigateToPage(LoginAssemblyTests.CurrentDriver, _Controller, _Action);
+            NavigateToPage(AssemblyTests.CurrentDriver, _Controller, _Action);
 
             //find the email box to input username info
-            IWebElement emailBox = LoginAssemblyTests.CurrentDriver.FindElement(By.Id(Extensions.LoginEmailInputBoxIdTag));
+            IWebElement emailBox = AssemblyTests.CurrentDriver.FindElement(By.Id(Extensions.LoginEmailInputBoxIdTag));
 
             //enter a valid email to login
             emailBox.SendKeys(Extensions.ValidEmailAdmin1);
 
             //find the password box to input password info  
-            IWebElement passwordBox = LoginAssemblyTests.CurrentDriver.FindElement(By.Id(Extensions.LoginPasswordInputBoxIdTag));
+            IWebElement passwordBox = AssemblyTests.CurrentDriver.FindElement(By.Id(Extensions.LoginPasswordInputBoxIdTag));
 
             //enter a valid password
             passwordBox.SendKeys(Extensions.ValidPasswordAdmin1);
 
             //click remember me button
-            LoginAssemblyTests.CurrentDriver.FindElement(By.Id("RememberMe")).Click();
+            AssemblyTests.CurrentDriver.FindElement(By.Id("RememberMe")).Click();
 
             //submit login info
-            LoginAssemblyTests.CurrentDriver.FindElement(By.Id(Extensions.LoginSubmitButtonIdTag)).Click();
+            AssemblyTests.CurrentDriver.FindElement(By.Id(Extensions.LoginSubmitButtonIdTag)).Click();
 
             //now confirm remember me worked
             //BUT WHAT DOES IT DO IN THIS CASE YOU SEXY SLOOT?

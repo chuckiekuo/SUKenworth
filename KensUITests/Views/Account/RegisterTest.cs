@@ -15,6 +15,7 @@ namespace KensUITests.Views.Account
         [TestMethod]
         public void Register_Valid_NonAdmin_Should_JumpToHomepage()
         {
+            NavigateToPage(AssemblyTests.CurrentDriver, _Controller, _Action);
 
         }
 

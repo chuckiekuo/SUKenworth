@@ -64,7 +64,7 @@
     <Compile Include="Extensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UIMap.cs" />
-    <Compile Include="LoginAssemblyTests.cs" />
+    <Compile Include="AssemblyTests.cs" />
     <Compile Include="Views\Account\LoginTest.cs" />
     <Compile Include="Views\Account\RegisterTest.cs" />
   </ItemGroup>

@@ -8,7 +8,7 @@ using OpenQA.Selenium.Support.UI;
 namespace KensUITests
 {
     [TestClass]
-    public class LoginAssemblyTests
+    public class AssemblyTests
     {
         public static IWebDriver CurrentDriver = new ChromeDriver(Extensions.ChromeDriverLocation);
 
