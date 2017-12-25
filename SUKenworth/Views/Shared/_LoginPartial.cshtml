@@ -9,7 +9,7 @@
 
     <ul class="nav navbar-nav navbar-right">
         <li>
-            @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+            @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage", id = "HelloUser"})
         </li>
 
         @{
@@ -20,7 +20,7 @@
                 string[] userEmail = User.Identity.Name.Split('.');
                 string urlEmail = userEmail[0] + "0000" + userEmail[1];
                 <li>
-                    @Html.ActionLink("Admin", "Index", "Admin", routeValues: new { id = urlEmail }, htmlAttributes: new { title = "Manage" })
+                    @Html.ActionLink("Admin", "Index", "Admin", routeValues: new { id = urlEmail }, htmlAttributes: new { title = "Manage", id = "AdminLink" })
                 </li>
             }
         }
