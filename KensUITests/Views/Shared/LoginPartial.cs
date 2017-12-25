@@ -9,13 +9,35 @@ namespace KensUITests.Views.Shared
     public class LoginPartial
     {
 
-        public static void ClickNavBarAdminLinks()
+        public static void ClickNavBarAdminLinks(IWebDriver currentDriver, string controller, string action)
         {
+            //navigate to the original page, this function has validation built into it
+            NavigateToPage(currentDriver, controller, action);
+
+            //click hello link should take you to log in page
+            currentDriver.FindElement(By.Id("HelloUser")).Click();
+
+            //check that page is the right page (manage index page)
+            ValidatePageTransition(currentDriver, "Manage", "Index");
+
+            //the admin link
+
+            //log off link
 
         }
 
-        public static void ClickNavBarNonAdminLinks()
+        public static void ClickNavBarNonAdminLinks(IWebDriver currentDriver, string controller, string action)
         {
+            //navigate to the original page, this function has validation built into it
+            NavigateToPage(currentDriver, controller, action);
+
+            //click hello link should take you to log in page
+            currentDriver.FindElement(By.Id("HelloUser")).Click();
+
+            //check that page is the right page (manage index page)
+            ValidatePageTransition(currentDriver, "Manage", "Index");
+
+            //log off link
 
         }
 
