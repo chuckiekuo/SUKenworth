@@ -72,21 +72,8 @@ namespace KensUITests.Views.Account
         [TestMethod]
         public void NoLogin_Valid_Should_VisitAllAllowedPages()
         {
-            //navigate to the kenworth page, this function has validation built into it
+            //navigate to the page,being tested, this function has validation built into it
             NavigateToPage(AssemblyTests.CurrentDriver, _Controller, _Action);
-
-            //click register, should take you to register page
-            AssemblyTests.CurrentDriver.FindElement(By.Id("registerLink")).Click();
-
-            //check that page is the right page (should be register page)
-            ValidatePageTransition(AssemblyTests.CurrentDriver, "Account", "Register");
-
-
-            //click log in, should take you to the log in page again
-            AssemblyTests.CurrentDriver.FindElement(By.Id("loginLink")).Click();
-
-            //manually validate (because we are clicking link and not entering urls)
-            ValidatePageTransition(AssemblyTests.CurrentDriver, _Controller, _Action);
 
             //click register as a new user link on login page
             AssemblyTests.CurrentDriver.FindElement(By.Id("registerLinkOnPage")).Click();
@@ -94,57 +81,8 @@ namespace KensUITests.Views.Account
             //check that page is the right page (should be register page)
             ValidatePageTransition(AssemblyTests.CurrentDriver, "Account", "Register");
 
-
-            //click log in, should take you to the log in page again
-            AssemblyTests.CurrentDriver.FindElement(By.Id("loginLink")).Click();
-
-            //manually validate
-            ValidatePageTransition(AssemblyTests.CurrentDriver, _Controller, _Action);
-
-            //click contact, should take you to contact page
-            AssemblyTests.CurrentDriver.FindElement(By.Id("contactLinkNavBar")).Click();
-
-            //check that page is the right page (Should be contact page)
-            ValidatePageTransition(AssemblyTests.CurrentDriver, "Home", "Contact");
-
-
-            //click log in, should take you to the log in page again
-            AssemblyTests.CurrentDriver.FindElement(By.Id("loginLink")).Click();
-
-            //manually validate
-            ValidatePageTransition(AssemblyTests.CurrentDriver, _Controller, _Action);
-
-            //click about, should take you to about page
-            AssemblyTests.CurrentDriver.FindElement(By.Id("aboutLinkNavBar")).Click();
-
-            //check that page is the right page (Should be the about page)
-            ValidatePageTransition(AssemblyTests.CurrentDriver, "Home", "About");
-
-
-            //click log in, should take you to the log in page again
-            AssemblyTests.CurrentDriver.FindElement(By.Id("loginLink")).Click();
-
-            //manually validate
-            ValidatePageTransition(AssemblyTests.CurrentDriver, _Controller, _Action);
-
-            //click SetDatabase, should take you to the set database page
-            AssemblyTests.CurrentDriver.FindElement(By.Id("setDatabaseNavBar")).Click();
-
-            //check that page is the right page (Should be setDatabase page)
-            ValidatePageTransition(AssemblyTests.CurrentDriver, "Home", "SetDatabase");
-
-
-            //click log in, should take you to the log in page again
-            AssemblyTests.CurrentDriver.FindElement(By.Id("loginLink")).Click();
-
-            //manually validate
-            ValidatePageTransition(AssemblyTests.CurrentDriver, _Controller, _Action);
-
-            //click homescreen logo in top left, should take you to homepage
-            AssemblyTests.CurrentDriver.FindElement(By.Id("homeLinkNavBar")).Click();
-            
-            //check that page is the right page
-            ValidatePageTransition(AssemblyTests.CurrentDriver, "Home", "Index");
+            //test nav bar links
+            Views.Shared.Layout.ClickNavBarLinksNotLoggedIn(AssemblyTests.CurrentDriver, _Controller, _Action);
         }
 
         //INCOMPLETE
