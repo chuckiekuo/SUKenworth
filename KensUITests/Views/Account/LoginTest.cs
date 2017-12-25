@@ -47,23 +47,9 @@ namespace KensUITests.Views.Account
         {
             NavigateToPage(LoginAssemblyTests.CurrentDriver, _Controller, _Action);
 
-            //find the email box to input username info
-            IWebElement emailBox = LoginAssemblyTests.CurrentDriver.FindElement(By.Id(Extensions.LoginEmailInputBoxIdTag));
+            LogIn(LoginAssemblyTests.CurrentDriver, Extensions.ValidEmailAdmin1, Extensions.ValidPasswordAdmin1);
 
-            //enter a valid email to login
-            emailBox.SendKeys(Extensions.ValidEmailAdmin1);
-
-            //find the password box to input password info  
-            IWebElement passwordBox = LoginAssemblyTests.CurrentDriver.FindElement(By.Id(Extensions.LoginPasswordInputBoxIdTag));
-
-            //enter a valid password
-            passwordBox.SendKeys(Extensions.ValidPasswordAdmin1);
-
-            //submit
-            LoginAssemblyTests.CurrentDriver.FindElement(By.Id(Extensions.LoginSubmitButtonIdTag)).Click();
-
-            //find the log out button and click it
-            LoginAssemblyTests.CurrentDriver.FindElement(By.Id(Extensions.LogoutIdTag)).Click();
+            LogOut(LoginAssemblyTests.CurrentDriver);
 
             //check that page is the right one
             ValidatePageTransition(LoginAssemblyTests.CurrentDriver, "Home", "Index");
@@ -74,23 +60,9 @@ namespace KensUITests.Views.Account
         {
             NavigateToPage(LoginAssemblyTests.CurrentDriver, _Controller, _Action);
 
-            //find the email box to input username info
-            IWebElement emailBox = LoginAssemblyTests.CurrentDriver.FindElement(By.Id(Extensions.LoginEmailInputBoxIdTag));
+            LogIn(LoginAssemblyTests.CurrentDriver, Extensions.ValidEmailNotAdmin1, Extensions.ValidPasswordNotAdmin1);
 
-            //enter a valid email to login
-            emailBox.SendKeys(Extensions.ValidEmailNotAdmin1);
-
-            //find the password box to input password info  
-            IWebElement passwordBox = LoginAssemblyTests.CurrentDriver.FindElement(By.Id(Extensions.LoginPasswordInputBoxIdTag));
-
-            //enter a valid password
-            passwordBox.SendKeys(Extensions.ValidPasswordNotAdmin1);
-
-            //submit
-            LoginAssemblyTests.CurrentDriver.FindElement(By.Id(Extensions.LoginSubmitButtonIdTag)).Click();
-
-            //find the log out button and click it
-            LoginAssemblyTests.CurrentDriver.FindElement(By.Id(Extensions.LogoutIdTag)).Click();
+            LogOut(LoginAssemblyTests.CurrentDriver);
 
             //check that page is the right one
             ValidatePageTransition(LoginAssemblyTests.CurrentDriver, "Home", "Index");
