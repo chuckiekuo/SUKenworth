@@ -15,7 +15,7 @@ namespace KensUITests.Views.Shared
             NavigateToPage(currentDriver, controller, action);
 
             //click hello link should take you to log in page
-            currentDriver.FindElement(By.Id("HelloUser")).Click();
+            currentDriver.FindElement(By.Id(Extensions.HelloNavBarIdTag)).Click();
 
             //check that page is the right page (manage index page)
             ValidatePageTransition(currentDriver, "Manage", "Index");
@@ -32,7 +32,7 @@ namespace KensUITests.Views.Shared
             NavigateToPage(currentDriver, controller, action);
 
             //click hello link should take you to log in page
-            currentDriver.FindElement(By.Id("HelloUser")).Click();
+            currentDriver.FindElement(By.Id(Extensions.HelloNavBarIdTag)).Click();
 
             //check that page is the right page (manage index page)
             ValidatePageTransition(currentDriver, "Manage", "Index");
@@ -47,7 +47,7 @@ namespace KensUITests.Views.Shared
             NavigateToPage(currentDriver, controller, action);
 
             //click log in, should take you to log in page
-            currentDriver.FindElement(By.Id("loginLink")).Click();
+            currentDriver.FindElement(By.Id(Extensions.LogInNavBarIdTag)).Click();
 
             //check that page is the right page (should be log in page)
             ValidatePageTransition(currentDriver, "Account", "Login");
@@ -57,7 +57,7 @@ namespace KensUITests.Views.Shared
             NavigateToPage(currentDriver, controller, action);
 
             //click register, should take you to register page
-            currentDriver.FindElement(By.Id("registerLink")).Click();
+            currentDriver.FindElement(By.Id(Extensions.RegisterNavBarIdTag)).Click();
 
             //check that page is the right page (should be register page)
             ValidatePageTransition(currentDriver, "Account", "Register");

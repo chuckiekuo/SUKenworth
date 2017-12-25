@@ -63,6 +63,12 @@ namespace KensUITests
         public const string LoginPasswordInputBoxIdTag = "Password";
         public const string LoginSubmitButtonIdTag = "LogInSubmit";
         public const string LogoutIdTag = "LogOffSubmit";
+        public const string RegisterLinkIdTag = "registerLinkOnPage";
+        public const string RemeberMeIdTag = "RememberMe";
+        public const string LogInNavBarIdTag = "loginLink";
+        public const string RegisterNavBarIdTag = "registerLink";
+        public const string HelloNavBarIdTag = "HelloUser";
+        public const string AdminIndexNavBarIdTag = "AdminLink";
 
 
         //for fetching the current date and time in a format that can be stored as a file name

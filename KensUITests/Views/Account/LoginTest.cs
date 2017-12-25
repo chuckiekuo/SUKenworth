@@ -76,10 +76,11 @@ namespace KensUITests.Views.Account
             NavigateToPage(AssemblyTests.CurrentDriver, _Controller, _Action);
 
             //click register as a new user link on login page
-            AssemblyTests.CurrentDriver.FindElement(By.Id("registerLinkOnPage")).Click();
+            AssemblyTests.CurrentDriver.FindElement(By.Id(Extensions.RegisterLinkIdTag)).Click();
 
             //check that page is the right page (should be register page)
             ValidatePageTransition(AssemblyTests.CurrentDriver, "Account", "Register");
+
 
             //test NavBar links
             Views.Shared.LoginPartial.ClickNavBarNoLoginLinks(AssemblyTests.CurrentDriver, _Controller, _Action);
@@ -104,7 +105,7 @@ namespace KensUITests.Views.Account
             passwordBox.SendKeys(Extensions.ValidPasswordAdmin1);
 
             //click remember me button
-            AssemblyTests.CurrentDriver.FindElement(By.Id("RememberMe")).Click();
+            AssemblyTests.CurrentDriver.FindElement(By.Id(Extensions.RemeberMeIdTag)).Click();
 
             //submit login info
             AssemblyTests.CurrentDriver.FindElement(By.Id(Extensions.LoginSubmitButtonIdTag)).Click();
