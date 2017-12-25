@@ -72,15 +72,16 @@
     <Compile Include="Views\Home\ContactTest.cs" />
     <Compile Include="Views\Home\IndexTest.cs" />
     <Compile Include="Views\Home\SetDatabaseTest.cs" />
+    <Compile Include="Views\Manage\ChangePasswordTest.cs" />
+    <Compile Include="Views\Manage\IndexTest.cs" />
+    <Compile Include="Views\Manage\SetPasswordTest.cs" />
     <Compile Include="Views\Shared\Layout.cs" />
     <Compile Include="Views\Shared\LoginPartial.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\Manage\" />
-  </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

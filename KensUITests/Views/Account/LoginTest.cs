@@ -130,14 +130,5 @@ namespace KensUITests.Views.Account
         //heres how to add tests for clicking all link:
         // create tests for ALL the shared view pages
         //  call those tests on all the other pages. This will avoid repeating code and also test all persistant links across all pages.
-
-        //tests for other pages:
-        // account->ANY others??
-        // home->about
-        // home->contact
-        // home->index
-        // home->error
-        // home->setdatabase
-        // mannage-> just do all of it
     }
 }
