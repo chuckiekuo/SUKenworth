@@ -187,7 +187,7 @@ namespace KensUITests.Views.Account
         // toggle admin privleges
         // database inputs
         // naviagting site without logging in
-        //
+        // registering invalid users
 
         //heres how to add tests for clicking all link:
         // create tests for ALL the shared view pages

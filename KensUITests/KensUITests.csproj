@@ -66,6 +66,7 @@
     <Compile Include="UIMap.cs" />
     <Compile Include="LoginAssemblyTests.cs" />
     <Compile Include="Views\Account\LoginTest.cs" />
+    <Compile Include="Views\Account\RegisterTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
