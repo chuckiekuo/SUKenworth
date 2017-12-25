@@ -82,7 +82,7 @@ namespace KensUITests.Views.Account
             ValidatePageTransition(AssemblyTests.CurrentDriver, "Account", "Register");
 
             //test nav bar links
-            Views.Shared.Layout.ClickNavBarLinksNotLoggedIn(AssemblyTests.CurrentDriver, _Controller, _Action);
+            Views.Shared.Layout.ClickNavBarLinks(AssemblyTests.CurrentDriver, _Controller, _Action);
         }
 
         //INCOMPLETE

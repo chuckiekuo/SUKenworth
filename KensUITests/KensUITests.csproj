@@ -68,6 +68,7 @@
     <Compile Include="Views\Account\LoginTest.cs" />
     <Compile Include="Views\Account\RegisterTest.cs" />
     <Compile Include="Views\Shared\Layout.cs" />
+    <Compile Include="Views\Shared\LoginPartial.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

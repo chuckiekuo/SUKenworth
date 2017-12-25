@@ -8,7 +8,7 @@ namespace KensUITests.Views.Shared
 {
     public class Layout
     {
-        public static void ClickNavBarLinksNotLoggedIn(IWebDriver currentDriver, string controller, string action)
+        public static void ClickNavBarLinks(IWebDriver currentDriver, string controller, string action)
         {
             //navigate to the original page, this function has validation built into it
             NavigateToPage(AssemblyTests.CurrentDriver, controller, action);
