@@ -25,20 +25,7 @@ namespace KensUITests.Views.Account
         {
             NavigateToPage(LoginAssemblyTests.CurrentDriver, _Controller, _Action);
 
-            //find the email box to input username info
-            IWebElement emailBox = LoginAssemblyTests.CurrentDriver.FindElement(By.Id(Extensions.LoginEmailInputBoxIdTag));
-
-            //enter a valid email to login
-            emailBox.SendKeys(Extensions.ValidEmailAdmin1);
-
-            //find the password box to input password info  
-            IWebElement passwordBox = LoginAssemblyTests.CurrentDriver.FindElement(By.Id(Extensions.LoginPasswordInputBoxIdTag));
-
-            //enter a valid password
-            passwordBox.SendKeys(Extensions.ValidPasswordAdmin1);
-
-            //submit
-            LoginAssemblyTests.CurrentDriver.FindElement(By.Id(Extensions.LoginSubmitButtonIdTag)).Click();
+            Extensions.LogIn(LoginAssemblyTests.CurrentDriver, Extensions.ValidEmailAdmin1, Extensions.ValidPasswordAdmin1);
 
             //check that page is the right page
             ValidatePageTransition(LoginAssemblyTests.CurrentDriver, "Home", "Index");

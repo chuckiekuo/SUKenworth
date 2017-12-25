@@ -141,6 +141,24 @@ namespace KensUITests
             return true;
         }
 
+        public static void LogIn(IWebDriver currentDriver, string username, string password)
+        {
+            //find the email box to input username info
+            IWebElement emailBox = currentDriver.FindElement(By.Id(LoginEmailInputBoxIdTag));
+
+            //enter a valid email to login
+            emailBox.SendKeys(username);
+
+            //find the password box to input password info  
+            IWebElement passwordBox = currentDriver.FindElement(By.Id(LoginPasswordInputBoxIdTag));
+
+            //enter a valid password
+            passwordBox.SendKeys(password);
+
+            //submit
+            currentDriver.FindElement(By.Id(LoginSubmitButtonIdTag)).Click();
+        }
+
         public static void LogOut(IWebDriver currentDriver)
         {
             currentDriver.FindElement(By.Id(LogoutIdTag)).Click(); // Click logout button
