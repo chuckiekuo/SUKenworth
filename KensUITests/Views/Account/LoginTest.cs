@@ -81,8 +81,8 @@ namespace KensUITests.Views.Account
             //check that page is the right page (should be register page)
             ValidatePageTransition(AssemblyTests.CurrentDriver, "Account", "Register");
 
-            //test nav bar links
-            Views.Shared.Layout.ClickNavBarLinks(AssemblyTests.CurrentDriver, _Controller, _Action);
+            //test NavBar links
+            Views.Shared.LoginPartial.ClickNavBarNoLoginLinks(AssemblyTests.CurrentDriver, _Controller, _Action);
         }
 
         //INCOMPLETE
