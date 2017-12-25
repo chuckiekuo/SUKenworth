@@ -20,10 +20,23 @@ namespace KensUITests.Views.Shared
             //check that page is the right page (manage index page)
             ValidatePageTransition(currentDriver, "Manage", "Index");
 
-            //the admin link
+
+            //navigate to the original page, this function has validation built into it
+            NavigateToPage(currentDriver, controller, action);
+
+            //click admin link, should take you to the admin index page
+            currentDriver.FindElement(By.Id(Extensions.AdminIndexNavBarIdTag)).Click();
+
+            //check that page is the right page (admin index page)
+            ValidatePageTransition(currentDriver, "Admin", "Index");
+
 
             //log off link
 
+
+
+            //test other nav bar links
+            Layout.ClickNavBarLinks(currentDriver, controller, action);
         }
 
         public static void ClickNavBarNonAdminLinks(IWebDriver currentDriver, string controller, string action)
@@ -39,6 +52,10 @@ namespace KensUITests.Views.Shared
 
             //log off link
 
+
+
+            //test other nav bar links
+            Layout.ClickNavBarLinks(currentDriver, controller, action);
         }
 
         public static void ClickNavBarNoLoginLinks(IWebDriver currentDriver, string controller, string action)
