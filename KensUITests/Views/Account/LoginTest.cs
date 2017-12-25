@@ -70,7 +70,7 @@ namespace KensUITests.Views.Account
 
 
         [TestMethod]
-        public void NoLogin_Valid_Should_VisitAllAllowedPages()
+        public void NoLogin_Valid_Should_VisitAllAllowedLinks()
         {
             //navigate to the page,being tested, this function has validation built into it
             NavigateToPage(AssemblyTests.CurrentDriver, _Controller, _Action);
@@ -85,6 +85,7 @@ namespace KensUITests.Views.Account
             //test NavBar links
             Views.Shared.LoginPartial.ClickNavBarNoLoginLinks(AssemblyTests.CurrentDriver, _Controller, _Action);
         }
+
 
         //INCOMPLETE
         [TestMethod]
