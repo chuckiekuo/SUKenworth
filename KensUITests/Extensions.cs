@@ -25,7 +25,7 @@ namespace KensUITests
 
 
         //log in details for nonadmin valid
-        public const string ValidEmailNotAdmin1 = "userTest@gmail.com";
+        public const string ValidEmailNotAdmin1 = "mark@pacaar.com";
         public const string ValidPasswordNotAdmin1 = "123456";
 
         //log in details for admin valid
