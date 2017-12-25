@@ -67,6 +67,7 @@
     <Compile Include="AssemblyTests.cs" />
     <Compile Include="Views\Account\LoginTest.cs" />
     <Compile Include="Views\Account\RegisterTest.cs" />
+    <Compile Include="Views\Shared\Layout.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -75,7 +76,6 @@
     <Folder Include="Views\Admin\" />
     <Folder Include="Views\Home\" />
     <Folder Include="Views\Manage\" />
-    <Folder Include="Views\Shared\" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
