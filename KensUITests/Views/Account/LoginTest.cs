@@ -178,8 +178,6 @@ namespace KensUITests.Views.Account
         //add happy path tests for
         // clicking any and all links - logged in or not - from every page
         //   toggling admin privleges
-        // register a user
-        //  needs a test db that can be wiped for that
         // naviagating site without logging in 
         //
         //add bad paths for
@@ -187,14 +185,13 @@ namespace KensUITests.Views.Account
         // toggle admin privleges
         // database inputs
         // naviagting site without logging in
-        // registering invalid users
+
 
         //heres how to add tests for clicking all link:
         // create tests for ALL the shared view pages
         //  call those tests on all the other pages. This will avoid repeating code and also test all persistant links across all pages.
 
         //tests for other pages:
-        // account->register
         // account->ANY others??
         // admin->index
         // home->about

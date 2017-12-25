@@ -19,6 +19,10 @@ namespace KensUITests.Views.Account
 
         }
 
-
+        //need to:
+        // register a user
+        //  needs a test db that can be wiped for that
+        // registering invalid users
+        //any other bad path things?
     }
 }
