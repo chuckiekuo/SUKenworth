@@ -67,6 +67,11 @@
     <Compile Include="AssemblyTests.cs" />
     <Compile Include="Views\Account\LoginTest.cs" />
     <Compile Include="Views\Account\RegisterTest.cs" />
+    <Compile Include="Views\Admin\IndexTest.cs" />
+    <Compile Include="Views\Home\AboutTest.cs" />
+    <Compile Include="Views\Home\ContactTest.cs" />
+    <Compile Include="Views\Home\IndexTest.cs" />
+    <Compile Include="Views\Home\SetDatabaseTest.cs" />
     <Compile Include="Views\Shared\Layout.cs" />
     <Compile Include="Views\Shared\LoginPartial.cs" />
   </ItemGroup>
@@ -74,8 +79,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Views\Admin\" />
-    <Folder Include="Views\Home\" />
     <Folder Include="Views\Manage\" />
   </ItemGroup>
   <Choose>

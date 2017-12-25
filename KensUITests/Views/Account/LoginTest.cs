@@ -133,7 +133,6 @@ namespace KensUITests.Views.Account
 
         //tests for other pages:
         // account->ANY others??
-        // admin->index
         // home->about
         // home->contact
         // home->index
