@@ -7,6 +7,8 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 
+//should rename current login function and add a new function that allows login from any page
+
 namespace KensUITests
 {
     public class Extensions
