@@ -7,7 +7,6 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 
-//should rename current login function and add a new function that allows login from any page
 
 namespace KensUITests
 {
@@ -149,7 +148,19 @@ namespace KensUITests
             return true;
         }
 
-        public static void LogIn(IWebDriver currentDriver, string username, string password)
+        public static void LogIn(IWebDriver currentDriver, string controller, string action, string username, string password)
+        {
+            //go to login page
+            NavigateToPage(currentDriver, "Account", "Login");
+
+            //log in with provided data
+            TypeLogIn(currentDriver, username, password);
+
+            //return to original page
+            NavigateToPage(currentDriver, controller, action);
+        }
+
+        public static void TypeLogIn(IWebDriver currentDriver, string username, string password)
         {
             //find the email box to input username info
             IWebElement emailBox = currentDriver.FindElement(By.Id(LoginEmailInputBoxIdTag));

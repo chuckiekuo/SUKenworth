@@ -41,7 +41,7 @@ namespace KensUITests.Views.Shared
             NavigateToPage(AssemblyTests.CurrentDriver, "Account", "Login");
 
             // admin log in
-            LogIn(AssemblyTests.CurrentDriver, user, pass);
+            LogIn(AssemblyTests.CurrentDriver, controller, action, user, pass);
 
 
             //test other nav bar links
@@ -70,7 +70,7 @@ namespace KensUITests.Views.Shared
             NavigateToPage(AssemblyTests.CurrentDriver, "Account", "Login");
 
             // nonadmin log in
-            LogIn(AssemblyTests.CurrentDriver, user, pass);
+            LogIn(AssemblyTests.CurrentDriver, controller, action, user, pass);
 
 
             //test other nav bar links

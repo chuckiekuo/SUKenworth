@@ -35,7 +35,7 @@ namespace KensUITests.Views.Home
             NavigateToPage(AssemblyTests.CurrentDriver, "Account", "Login");
 
             //admin log in
-            LogIn(AssemblyTests.CurrentDriver, ValidEmailAdmin1, ValidPasswordAdmin1);
+            LogIn(AssemblyTests.CurrentDriver, _Controller, _Action, ValidEmailAdmin1, ValidPasswordAdmin1);
 
             //navigate to the page,being tested
             NavigateToPage(AssemblyTests.CurrentDriver, _Controller, _Action);
@@ -52,7 +52,7 @@ namespace KensUITests.Views.Home
             NavigateToPage(AssemblyTests.CurrentDriver, "Account", "Login");
 
             //admin log in
-            LogIn(AssemblyTests.CurrentDriver, ValidEmailNotAdmin1, ValidPasswordNotAdmin1);
+            LogIn(AssemblyTests.CurrentDriver, _Controller, _Action, ValidEmailNotAdmin1, ValidPasswordNotAdmin1);
 
             //navigate to the page,being tested
             NavigateToPage(AssemblyTests.CurrentDriver, _Controller, _Action);

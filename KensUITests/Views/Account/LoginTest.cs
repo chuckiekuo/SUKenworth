@@ -5,10 +5,6 @@ using OpenQA.Selenium.Chrome;
 using static KensUITests.Extensions;
 
 //incomplete
-//add happy path tests for
-// clicking any and all links - logged in or not - from every page
-
-//
 //add bad paths for
 // log in
 // database inputs
@@ -35,7 +31,7 @@ namespace KensUITests.Views.Account
         {
             NavigateToPage(AssemblyTests.CurrentDriver, _Controller, _Action);
 
-            LogIn(AssemblyTests.CurrentDriver, Extensions.ValidEmailAdmin1, Extensions.ValidPasswordAdmin1);
+            TypeLogIn(AssemblyTests.CurrentDriver, Extensions.ValidEmailAdmin1, Extensions.ValidPasswordAdmin1);
 
             //check that page is the right page
             ValidatePageTransition(AssemblyTests.CurrentDriver, "Home", "Index");
@@ -46,7 +42,7 @@ namespace KensUITests.Views.Account
         {
             NavigateToPage(AssemblyTests.CurrentDriver, _Controller, _Action);
 
-            LogIn(AssemblyTests.CurrentDriver, Extensions.ValidEmailNotAdmin1, Extensions.ValidPasswordNotAdmin1);
+            TypeLogIn(AssemblyTests.CurrentDriver, Extensions.ValidEmailNotAdmin1, Extensions.ValidPasswordNotAdmin1);
 
             //check that page is the right page
             ValidatePageTransition(AssemblyTests.CurrentDriver, "Home", "Index");
@@ -57,7 +53,7 @@ namespace KensUITests.Views.Account
         {
             NavigateToPage(AssemblyTests.CurrentDriver, _Controller, _Action);
 
-            LogIn(AssemblyTests.CurrentDriver, Extensions.ValidEmailAdmin1, Extensions.ValidPasswordAdmin1);
+            TypeLogIn(AssemblyTests.CurrentDriver, Extensions.ValidEmailAdmin1, Extensions.ValidPasswordAdmin1);
 
             LogOut(AssemblyTests.CurrentDriver);
 
@@ -70,7 +66,7 @@ namespace KensUITests.Views.Account
         {
             NavigateToPage(AssemblyTests.CurrentDriver, _Controller, _Action);
 
-            LogIn(AssemblyTests.CurrentDriver, Extensions.ValidEmailNotAdmin1, Extensions.ValidPasswordNotAdmin1);
+            TypeLogIn(AssemblyTests.CurrentDriver, Extensions.ValidEmailNotAdmin1, Extensions.ValidPasswordNotAdmin1);
 
             LogOut(AssemblyTests.CurrentDriver);
 
