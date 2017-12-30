@@ -41,7 +41,7 @@ namespace KensUITests.Views.Home
             NavigateToPage(AssemblyTests.CurrentDriver, _Controller, _Action);
 
             //test nav bar links
-            Views.Shared.LoginPartial.ClickNavBarAdminLinks(AssemblyTests.CurrentDriver,_Controller,_Action);
+            Views.Shared.LoginPartial.ClickNavBarAdminLinks(AssemblyTests.CurrentDriver,_Controller,_Action, ValidEmailAdmin1, ValidPasswordAdmin1);
         }
 
         [TestMethod]
@@ -58,7 +58,7 @@ namespace KensUITests.Views.Home
             NavigateToPage(AssemblyTests.CurrentDriver, _Controller, _Action);
 
             //test nav bar links
-            Views.Shared.LoginPartial.ClickNavBarNonAdminLinks(AssemblyTests.CurrentDriver, _Controller, _Action);
+            Views.Shared.LoginPartial.ClickNavBarNonAdminLinks(AssemblyTests.CurrentDriver, _Controller, _Action, ValidEmailNotAdmin1, ValidPasswordNotAdmin1);
         }
 
     }

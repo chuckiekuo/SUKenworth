@@ -4,16 +4,12 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using static KensUITests.Extensions;
 
-//incomplete
-// need to add clicking the log off button
-//   this also means you will have to log back in again to resume testing with the logged in profile - maybe add the username and pass to the function parameters
-
 namespace KensUITests.Views.Shared
 {
     public class LoginPartial
     {
 
-        public static void ClickNavBarAdminLinks(IWebDriver currentDriver, string controller, string action)
+        public static void ClickNavBarAdminLinks(IWebDriver currentDriver, string controller, string action, string user, string pass)
         {
             //navigate to the original page, this function has validation built into it
             NavigateToPage(currentDriver, controller, action);
@@ -45,14 +41,14 @@ namespace KensUITests.Views.Shared
             NavigateToPage(AssemblyTests.CurrentDriver, "Account", "Login");
 
             // admin log in
-            LogIn(AssemblyTests.CurrentDriver, ValidEmailAdmin1, ValidPasswordAdmin1);
+            LogIn(AssemblyTests.CurrentDriver, user, pass);
 
 
             //test other nav bar links
             Layout.ClickNavBarLinks(currentDriver, controller, action);
         }
 
-        public static void ClickNavBarNonAdminLinks(IWebDriver currentDriver, string controller, string action)
+        public static void ClickNavBarNonAdminLinks(IWebDriver currentDriver, string controller, string action, string user, string pass)
         {
             //navigate to the original page, this function has validation built into it
             NavigateToPage(currentDriver, controller, action);
@@ -65,7 +61,16 @@ namespace KensUITests.Views.Shared
 
 
             //log off link
+            // first log off
+            LogOut(currentDriver);
+            // check page is the right page
+            ValidatePageTransition(currentDriver, "Home", "Index");
 
+            // now log back in
+            NavigateToPage(AssemblyTests.CurrentDriver, "Account", "Login");
+
+            // nonadmin log in
+            LogIn(AssemblyTests.CurrentDriver, user, pass);
 
 
             //test other nav bar links
