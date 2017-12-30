@@ -4,6 +4,18 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using static KensUITests.Extensions;
 
+//incomplete
+//add happy path tests for
+// clicking any and all links - logged in or not - from every page
+//   toggling admin privleges
+// navigating site without logging in 
+//
+//add bad paths for
+// log in
+// toggle admin privleges
+// database inputs
+// naviagting site without logging in
+
 namespace KensUITests.Views.Account
 {
     [TestClass]
@@ -13,7 +25,7 @@ namespace KensUITests.Views.Account
         private string _Action = "Login";
 
         //use this as a method to do things such as a log in so that you don't have to repeat code
-        //you can have different initialize functions
+        //you can have different initialize functions NOT?? i dunno actually
         [TestInitialize]
         public void Initialize()
         {
@@ -115,20 +127,5 @@ namespace KensUITests.Views.Account
             //BUT WHAT DOES IT DO IN THIS CASE YOU SEXY SLOOT?
         }
 
-        //add happy path tests for
-        // clicking any and all links - logged in or not - from every page
-        //   toggling admin privleges
-        // naviagating site without logging in 
-        //
-        //add bad paths for
-        // log in
-        // toggle admin privleges
-        // database inputs
-        // naviagting site without logging in
-
-
-        //heres how to add tests for clicking all link:
-        // create tests for ALL the shared view pages
-        //  call those tests on all the other pages. This will avoid repeating code and also test all persistant links across all pages.
     }
 }

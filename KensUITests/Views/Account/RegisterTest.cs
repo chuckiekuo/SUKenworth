@@ -4,6 +4,13 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using static KensUITests.Extensions;
 
+//incomplete
+//need to:
+// register a user
+//  needs a test db that can be wiped for that
+// registering invalid users
+//any other bad path things?
+
 namespace KensUITests.Views.Account
 {
     [TestClass]
@@ -19,10 +26,5 @@ namespace KensUITests.Views.Account
 
         }
 
-        //need to:
-        // register a user
-        //  needs a test db that can be wiped for that
-        // registering invalid users
-        //any other bad path things?
     }
 }
