@@ -8,7 +8,6 @@ using static KensUITests.Extensions;
 //add happy path tests for
 // clicking any and all links - logged in or not - from every page
 //   toggling admin privleges
-// navigating site without logging in 
 //
 //add bad paths for
 // log in
@@ -96,6 +95,8 @@ namespace KensUITests.Views.Account
 
             //test NavBar links
             Views.Shared.LoginPartial.ClickNavBarNoLoginLinks(AssemblyTests.CurrentDriver, _Controller, _Action);
+
+            //there is also a link to a microsoft article, not testing that because it should be removed. If that link is not there, then this comment line should be deleted
         }
 
 
