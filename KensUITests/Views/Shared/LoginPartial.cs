@@ -18,7 +18,7 @@ namespace KensUITests.Views.Shared
             //navigate to the original page, this function has validation built into it
             NavigateToPage(currentDriver, controller, action);
 
-            //click hello link should take you to log in page
+            //click hello link should take you to manage index page
             currentDriver.FindElement(By.Id(Extensions.HelloNavBarIdTag)).Click();
 
             //check that page is the right page (manage index page)

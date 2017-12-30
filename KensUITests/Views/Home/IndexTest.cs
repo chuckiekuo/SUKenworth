@@ -45,8 +45,23 @@ namespace KensUITests.Views.Home
 
             //test nav bar links
             Views.Shared.LoginPartial.ClickNavBarAdminLinks(AssemblyTests.CurrentDriver,_Controller,_Action);
+        }
 
+        [TestMethod]
+        public void HomeIndex_Valid_ClickAllLinks_NonAdminLogin()
+        {
+            //first log into a nonadmin profile
+            //navigate to log in page
+            NavigateToPage(AssemblyTests.CurrentDriver, "Account", "Login");
 
+            //admin log in
+            LogIn(AssemblyTests.CurrentDriver, ValidEmailNotAdmin1, ValidPasswordNotAdmin1);
+
+            //navigate to the page,being tested
+            NavigateToPage(AssemblyTests.CurrentDriver, _Controller, _Action);
+
+            //test nav bar links
+            Views.Shared.LoginPartial.ClickNavBarNonAdminLinks(AssemblyTests.CurrentDriver, _Controller, _Action);
         }
 
     }
