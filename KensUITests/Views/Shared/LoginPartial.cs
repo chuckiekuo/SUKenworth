@@ -5,6 +5,8 @@ using OpenQA.Selenium.Chrome;
 using static KensUITests.Extensions;
 
 //incomplete
+// need to add clicking the log off button
+//   this also means you will have to log back in again to resume testing with the logged in profile - maybe add the username and pass to the function parameters
 
 namespace KensUITests.Views.Shared
 {

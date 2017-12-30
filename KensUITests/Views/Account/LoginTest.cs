@@ -7,11 +7,10 @@ using static KensUITests.Extensions;
 //incomplete
 //add happy path tests for
 // clicking any and all links - logged in or not - from every page
-//   toggling admin privleges
+
 //
 //add bad paths for
 // log in
-// toggle admin privleges
 // database inputs
 // naviagting site without logging in
 

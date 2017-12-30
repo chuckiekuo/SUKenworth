@@ -5,6 +5,14 @@ using OpenQA.Selenium.Chrome;
 using static KensUITests.Extensions;
 
 //incomplete
+//happy path
+// for clicking all links, logged in or not
+// set all the databases
+//
+//bad path for
+// clicking links?
+// setting the wrong databases
+
 
 namespace KensUITests.Views.Home
 {

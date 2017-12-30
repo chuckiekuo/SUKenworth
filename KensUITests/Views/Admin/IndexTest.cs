@@ -5,6 +5,15 @@ using OpenQA.Selenium.Chrome;
 using static KensUITests.Extensions;
 
 //incomplete
+//happy path for
+//   toggling admin privleges
+//  clicking all links
+//
+//bad path for
+//   toggling admin privleges
+// clicking all links
+
+
 
 namespace KensUITests.Views.Admin
 {
