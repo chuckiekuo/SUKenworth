@@ -36,7 +36,16 @@ namespace KensUITests.Views.Shared
 
 
             //log off link
+            // first log off
+            LogOut(currentDriver);
+            // check page is the right page
+            ValidatePageTransition(currentDriver, "Home", "Index");
 
+            // now log back in
+            NavigateToPage(AssemblyTests.CurrentDriver, "Account", "Login");
+
+            // admin log in
+            LogIn(AssemblyTests.CurrentDriver, ValidEmailAdmin1, ValidPasswordAdmin1);
 
 
             //test other nav bar links
