@@ -9,7 +9,6 @@
     using System.Configuration;
     using System.Data.SqlClient;
     using System.Data.Entity.Core.EntityClient;
-    using SUKenworth.App_Start;
 
 
     public class DataController : Controller
@@ -25,8 +24,7 @@
             public string UpdateUser { get; set; }
         }
 
-        private const string DEFAULT_DB = "TestDatabase1";
-        private const string DEFAULT_PROVIDER = "System.Data.SqlClient";
+        private const string DEFAULT_DB = "MyLocalTestDatabase";
 
         private XDocument xmlDocument;
 
@@ -42,13 +40,13 @@
             // Add benign DEFAULT case
             if(dbName == DEFAULT_DB)
             {
-                connectionString = DataConfig.TestDatabase1;
+                connectionString = "";
 
                 // TO-DO Complete CRUDIS Query set
                 // Investigate how to pass complex SQL statement strings
                 // Linq query for formatting and reformatting one data-set
                 myQueries.SelectAll = "SELECT * FROM dbo.[User]";
-                myQueries.DeleteAll = "DELETE * FROM dbo.[User] ";
+                myQueries.DeleteAll = "DELETE * FROM dbo.[User]";
                 myQueries.SelectUser = String.Empty;
                 myQueries.CreateUser = String.Empty;//"INSER into dbo.[User] Values(\"\" + id + \",\" + username + \",\" + password + \",\" + admin + \"\")";
                 myQueries.DeleteUser = String.Empty;
@@ -56,7 +54,7 @@
             }
             else
             {
-                connectionString = DataConfig.TestDatabase2;
+                connectionString = "";
                 //TO-DO Complete CRUDIS Query set
                 myQueries.SelectAll = String.Empty;
                 myQueries.DeleteAll = String.Empty;
