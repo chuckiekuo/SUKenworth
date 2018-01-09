@@ -217,31 +217,12 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\TestDataModels\LocalTestDatabase.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>LocalTestDatabase.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\TestDataModels\LocalTestDatabase.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>LocalTestDatabase.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\TestDataModels\LocalTestDatabase.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>LocalTestDatabase.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ErrorModel.cs" />
     <Compile Include="Models\IdentifyExtensions.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\DatabaseModel.cs" />
-    <Compile Include="Models\TestDataModels\User.cs">
-      <DependentUpon>LocalTestDatabase.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\TestDataModels\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -346,25 +327,7 @@
     <Content Include="Content\bootstrap\badges.less" />
     <Content Include="Content\bootstrap\alerts.less" />
     <Content Include="Bundles.config" />
-    <EntityDeploy Include="Models\TestDataModels\LocalTestDatabase.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>LocalTestDatabase.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\TestDataModels\LocalTestDatabase.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>LocalTestDatabase.Context.cs</LastGenOutput>
-      <DependentUpon>LocalTestDatabase.edmx</DependentUpon>
-    </Content>
-    <Content Include="Models\TestDataModels\LocalTestDatabase.edmx.diagram">
-      <DependentUpon>LocalTestDatabase.edmx</DependentUpon>
-    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Models\TestDataModels\LocalTestDatabase.edmx.sql" />
-    <Content Include="Models\TestDataModels\LocalTestDatabase.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>LocalTestDatabase.cs</LastGenOutput>
-      <DependentUpon>LocalTestDatabase.edmx</DependentUpon>
-    </Content>
     <Content Include="Scripts\bootstrap-datetimepicker.js" />
     <Content Include="Scripts\bootstrap-datetimepicker.min.js" />
     <None Include="Scripts\jquery-3.2.1.intellisense.js" />
