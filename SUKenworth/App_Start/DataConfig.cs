@@ -7,6 +7,6 @@ namespace SUKenworth.App_Start
 {
     public static class DataConfig
     {
-        public static string myLocalTestDatabase = "";
+        public static string MyLocalTestDatabase = "";
     }
 }

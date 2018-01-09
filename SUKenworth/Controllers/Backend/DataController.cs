@@ -5,11 +5,11 @@
     using System.Web.Mvc;
     using System.Linq;
     using System.Xml.Linq;
-    using SUKenworth.Models.TestDataModels;
     using System.Configuration;
     using System.Data.SqlClient;
     using System.Data.Entity.Core.EntityClient;
-
+    using SUKenworth.App_Start;
+    using SUKenworth.Models;
 
     public class DataController : Controller
     {
@@ -40,7 +40,7 @@
             // Add benign DEFAULT case
             if(dbName == DEFAULT_DB)
             {
-                connectionString = "";
+                connectionString = DataConfig.MyLocalTestDatabase;
 
                 // TO-DO Complete CRUDIS Query set
                 // Investigate how to pass complex SQL statement strings
@@ -54,16 +54,9 @@
             }
             else
             {
-                connectionString = "";
-                //TO-DO Complete CRUDIS Query set
-                myQueries.SelectAll = String.Empty;
-                myQueries.DeleteAll = String.Empty;
-                myQueries.SelectUser = String.Empty;
-                myQueries.CreateUser = String.Empty;
-                myQueries.DeleteUser = String.Empty;
-                myQueries.UpdateUser = String.Empty;
+                // TO-DO add info for additional Databases
             }
-            
+
             myConnection = new SqlConnection(connectionString);
         }
 
