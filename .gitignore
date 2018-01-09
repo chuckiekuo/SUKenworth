@@ -261,5 +261,3 @@ __pycache__/
 *.pyc
 
 # Local-test Database files
-SUKenworth/Models/TestDataModels/
-SUKenworth/App_Start/DataConfig.cs
