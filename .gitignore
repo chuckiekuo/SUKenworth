@@ -7,10 +7,6 @@
 *.userosscache
 *.sln.docstates
 
-# Local-test Database files
-SUKenworth\App_Start\DataConfig.cs
-SUKenworth\Models\TestDataModels\
-
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
@@ -263,3 +259,7 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+
+# Local-test Database files
+*/SUKenworth/App_Start/DataConfig.cs
+*/SUKenworth/Models/TestDataModels/
