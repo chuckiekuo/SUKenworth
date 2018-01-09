@@ -7,6 +7,16 @@
 *.userosscache
 *.sln.docstates
 
+# Local-test Database files
+SUKenworth\App_Start\DataConfig.cs
+SUKenworth\Models\TestDataModels\LocalTestDatabase.Context.cs
+SUKenworth\Models\TestDataModels\LocalTestDatabase.Context.tt
+SUKenworth\Models\TestDataModels\LocalTestDatabase.cs
+SUKenworth\Models\TestDataModels\LocalTestDatabase.edmx
+SUKenworth\Models\TestDataModels\LocalTestDatabase.edmx.sql
+SUKenworth\Models\TestDataModels\LocalTestDatabase.tt
+SUKenworth\Models\TestDataModels\User.cs
+
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
