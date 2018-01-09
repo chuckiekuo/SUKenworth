@@ -7,6 +7,6 @@ namespace SUKenworth.App_Start
 {
     public static class DataConfig
     {
-        public static string myLocalTestDatabase = "data source=DESKTOP-SHUF4P9\SQLEXPRESS;initial catalog=MyLocalTestDatabase;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework";
+        public static string myLocalTestDatabase = "";
     }
 }
