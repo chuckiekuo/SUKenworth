@@ -19,11 +19,17 @@ namespace KensUITests.Views.Home
         private string _Controller = "Home";
         private string _Action = "About";
 
+        [TestInitialize]
+        public void NavigateToAboutPage()
+        {
+            AssemblyTests.CurrentDriver.Navigate().GoToUrl(AssemblyTests.UrlPrefix +_Controller + "/" + _Action);
+        }
+
         [TestMethod]
         public void HomeAbout_Valid_ClickAllLinks_NoLogin()
         {
             //navigate to the page,being tested, this function has validation built into it
-            NavigateToPage(AssemblyTests.CurrentDriver, _Controller, _Action);
+            //NavigateToPage(AssemblyTests.CurrentDriver, _Controller, _Action);
 
             //test nav bar links
             Views.Shared.LoginPartial.ClickNavBarNoLoginLinks(AssemblyTests.CurrentDriver, _Controller, _Action);

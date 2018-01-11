@@ -16,7 +16,7 @@ namespace KensUITests
 
         public static string LocalUrl = Extensions.BaseUrl;
         //public static string LiveUrl = "";
-        //public static string UrlPrefix = LocalUrl;
+        public static string UrlPrefix = LocalUrl;
 
         public static WebDriverWait Wait = new WebDriverWait(CurrentDriver, new TimeSpan(0, 0, 5));
         public static WebDriverWait Wait20 = new WebDriverWait(CurrentDriver, new TimeSpan(0, 0, 20));
