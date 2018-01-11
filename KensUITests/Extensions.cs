@@ -18,8 +18,8 @@ namespace KensUITests
         public const string BaseUrl = "http://localhost:50298/";
 
         //file location of the chrome driver
-        //public const string ChromeDriverLocation = "C:/Users/oslandt/Desktop/KenworthTeamsCommonProject/SUKenworth/KensUITests";
-        public const string ChromeDriverLocation = "C:/Users/The Salty Spitoon/Desktop/KenworthCommonFeatures/SUKenworth/KensUITests";
+        public const string ChromeDriverLocation = "C:/Users/oslandt/Desktop/KenworthTeamsCommonProject/SUKenworth/KensUITests";
+        //public const string ChromeDriverLocation = "C:/Users/The Salty Spitoon/Desktop/KenworthCommonFeatures/SUKenworth/KensUITests";
 
         //location to store screenshots in
         private const string ScreenshotLocation = "C:/Users/oslandt/Desktop/Screenshots";
