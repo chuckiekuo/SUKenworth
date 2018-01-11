@@ -34,6 +34,18 @@ namespace KensUITests
 
         }
 
+        [TestInitialize]
+        public static void AssemblyTestInitialize()
+        {
+
+        }
+
+        [TestCleanup]
+        public static void AssemblyTestCleanup()
+        {
+
+        }
+
         [AssemblyCleanup]
         public static void AssemblyCleanup()
         {
