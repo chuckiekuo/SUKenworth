@@ -74,5 +74,12 @@ namespace KensUITests.Views.Home
             //test nav bar links
             Views.Shared.LoginPartial.ClickNavBarNonAdminLinks(AssemblyTests.CurrentDriver, _Controller, _Action, ValidEmailNotAdmin1, ValidPasswordNotAdmin1);
         }
+
+        [TestCleanup]
+        public void AboutTestCleanup()
+        {
+            //general cleanup
+            AssemblyTests.AssemblyTestCleanup();
+        }
     }
 }

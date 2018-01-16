@@ -38,20 +38,21 @@ namespace KensUITests
         [TestInitialize]
         public static void AssemblyTestInitialize()
         {
-            //be sure no profiles are signed in
-            Extensions.LogOut(CurrentDriver);
+            //navigate to home page
+            Extensions.NavigateToPage(CurrentDriver, "Home", "Index");
         }
 
         [TestCleanup]
         public static void AssemblyTestCleanup()
         {
-            
+            //be sure no profiles are signed in
+            Extensions.LogOut(CurrentDriver);
         }
 
         [AssemblyCleanup]
         public static void AssemblyCleanup()
         {
-            //should have a logout method here so the current driver will log out
+            
             //finally, quit the current driver
             CurrentDriver.Quit();
         }

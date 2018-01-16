@@ -182,15 +182,14 @@ namespace KensUITests
         {
             try
             {
+                //explicit wait
+                WebDriverWait wait = new WebDriverWait(currentDriver, TimeSpan.FromSeconds(5));
+
                 currentDriver.FindElement(By.Id(LogoutIdTag)).Click(); // Click logout button
             }
             catch(Exception ex)
             {
-                NavigateToPage(currentDriver, "Home","Index");
-            }
-            finally
-            {
-
+                currentDriver.FindElement(By.Id(LogInNavBarIdTag)).Click();
             }
 
             

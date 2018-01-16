@@ -16,6 +16,17 @@ namespace KensUITests.Views.Home
         private string _Controller = "Home";
         private string _Action = "Index";
 
+        [TestInitialize]
+        public void NavigateToAboutPage()
+        {
+            //general test initialize
+            AssemblyTests.AssemblyTestInitialize();
+
+            //navigate to page being tested
+            AssemblyTests.CurrentDriver.Navigate().GoToUrl(AssemblyTests.UrlPrefix + _Controller + "/" + _Action);
+
+        }
+
         [TestMethod]
         public void HomeIndex_Valid_ClickAllLinks_NoLogin()
         {
@@ -59,6 +70,13 @@ namespace KensUITests.Views.Home
 
             //test nav bar links
             Views.Shared.LoginPartial.ClickNavBarNonAdminLinks(AssemblyTests.CurrentDriver, _Controller, _Action, ValidEmailNotAdmin1, ValidPasswordNotAdmin1);
+        }
+
+        [TestCleanup]
+        public void IndexTestCleanup()
+        {
+            //general cleanup
+            AssemblyTests.AssemblyTestCleanup();
         }
 
     }

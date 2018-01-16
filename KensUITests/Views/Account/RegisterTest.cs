@@ -19,6 +19,17 @@ namespace KensUITests.Views.Account
         private string _Controller = "Account";
         private string _Action = "Register";
 
+        [TestInitialize]
+        public void NavigateToAboutPage()
+        {
+            //general test initialize
+            AssemblyTests.AssemblyTestInitialize();
+
+            //navigate to page being tested
+            AssemblyTests.CurrentDriver.Navigate().GoToUrl(AssemblyTests.UrlPrefix + _Controller + "/" + _Action);
+
+        }
+
         [TestMethod]
         public void Register_Valid_NonAdmin_Should_JumpToHomepage()
         {
@@ -26,5 +37,11 @@ namespace KensUITests.Views.Account
 
         }
 
+        [TestCleanup]
+        public void RegisterTestCleanup()
+        {
+            //general cleanup
+            AssemblyTests.AssemblyTestCleanup();
+        }
     }
 }

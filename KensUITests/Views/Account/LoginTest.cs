@@ -18,11 +18,14 @@ namespace KensUITests.Views.Account
         private string _Controller = "Account";
         private string _Action = "Login";
 
-        //use this as a method to do things such as a log in so that you don't have to repeat code
-        //you can have different initialize functions NOT?? i dunno actually
         [TestInitialize]
-        public void Initialize()
+        public void NavigateToAboutPage()
         {
+            //general test initialize
+            AssemblyTests.AssemblyTestInitialize();
+
+            //navigate to page being tested
+            AssemblyTests.CurrentDriver.Navigate().GoToUrl(AssemblyTests.UrlPrefix + _Controller + "/" + _Action);
 
         }
 
@@ -122,6 +125,5 @@ namespace KensUITests.Views.Account
             //now confirm remember me worked
             //BUT WHAT DOES IT DO IN THIS CASE YOU SEXY SLOOT?
         }
-
     }
 }
