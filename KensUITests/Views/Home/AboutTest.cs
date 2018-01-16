@@ -22,7 +22,12 @@ namespace KensUITests.Views.Home
         [TestInitialize]
         public void NavigateToAboutPage()
         {
+            //general test initialize
+            AssemblyTests.AssemblyTestInitialize();
+
+            //navigate to page being tested
             AssemblyTests.CurrentDriver.Navigate().GoToUrl(AssemblyTests.UrlPrefix +_Controller + "/" + _Action);
+            
         }
 
         [TestMethod]

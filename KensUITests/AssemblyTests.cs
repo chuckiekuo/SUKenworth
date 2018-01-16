@@ -32,18 +32,20 @@ namespace KensUITests
             //set implicit wait for driver
             CurrentDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(Extensions.MaxWaitTime);
 
+            
         }
 
         [TestInitialize]
         public static void AssemblyTestInitialize()
         {
-
+            //be sure no profiles are signed in
+            Extensions.LogOut(CurrentDriver);
         }
 
         [TestCleanup]
         public static void AssemblyTestCleanup()
         {
-
+            
         }
 
         [AssemblyCleanup]
