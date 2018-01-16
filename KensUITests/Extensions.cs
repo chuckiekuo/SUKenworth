@@ -180,7 +180,20 @@ namespace KensUITests
 
         public static void LogOut(IWebDriver currentDriver)
         {
-            currentDriver.FindElement(By.Id(LogoutIdTag)).Click(); // Click logout button
+            try
+            {
+                currentDriver.FindElement(By.Id(LogoutIdTag)).Click(); // Click logout button
+            }
+            catch(Exception ex)
+            {
+                NavigateToPage(currentDriver, "Home","Index");
+            }
+            finally
+            {
+
+            }
+
+            
         }
     }
 }
